@@ -1,49 +1,38 @@
-import 'dart:convert';
-import 'dart:io'; // Import the dart:io library
-import 'package:audioplayers/audioplayers.dart';
 import 'package:get/get.dart';
 import 'package:http/http.dart' as http;
-import 'package:path_provider/path_provider.dart'; // Import the path_provider package
 
 class VoiceController extends GetxController {
-  AudioPlayer audioPlayer = AudioPlayer();
-  String URL = "https://api.elevenlabs.io/v1/text-to-speech/<voice-id>";
-  String API = "1de53aee9513d795d6762c19777cffb2";
-  String VOICEID = "21m00Tcm4TlvDq8ikWAM";
-  late Directory temDir;
-  late File audioFile;
-  Future<void> TextToVoice() async {
-    Uri uri = Uri.parse("https://api.elevenlabs.io/v1/text-to-speech/$VOICEID");
-    Map<String, dynamic> body = {
-      "text": "Hi! My name is Bella, nice to meet you!",
-      "model_id": "eleven_monolingual_v1",
-      "voice_settings": {
-        "stability": 0.5,
-        "similarity_boost": 0.5,
-      },
+  Future<void> getTextToSpeech() async {
+    final Uri uri = Uri.parse(
+        'https://microsoft-edge-text-to-speech.p.rapidapi.com/TTS/EdgeTTS');
+
+    final Map<String, String> queryParams = {
+      'text':
+          'Flutter is an open-source UI software development kit created by Google. It is used to develop cross platform applications from a single codebase for any web browser, Fuchsia,',
+      'voice_name': 'en-US-AriaNeural',
     };
-    final response = await http.post(
-      uri,
-      headers: {
-        "Accept": "audio/mpeg",
-        "Content-Type": "application/json",
-        "xi-api-key": API,
-      },
-      body: json.encode(body),
-    );
-    if (response.statusCode == 200) {
-      // If the response is successful, save the audio data to a file
-      temDir = await getTemporaryDirectory();
-      audioFile = File('${temDir.path}/audio.mp3');
-      await audioFile.writeAsBytes(response.bodyBytes);
 
-      // Play the stored audio file
-      audioPlayer.play(
-        audioFile.path as Source,
+    final Uri fullUri = uri.replace(queryParameters: queryParams);
+
+    final Map<String, String> headers = {
+      'X-RapidAPI-Key': '7b76b45420msh631f27d49acaf8bp1eb0c3jsnea66b19011f5',
+      'X-RapidAPI-Host': 'microsoft-edge-text-to-speech.p.rapidapi.com',
+    };
+
+    try {
+      final response = await http.get(
+        fullUri,
+        headers: headers,
       );
-    }
 
-    print(audioFile);
-    // print(response);
+      if (response.statusCode == 200) {
+        print(response.body);
+      } else {
+        print('Request failed with status: ${response.statusCode}');
+        print(response.body);
+      }
+    } catch (error) {
+      print('An error occurred: $error');
+    }
   }
 }
