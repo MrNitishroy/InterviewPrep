@@ -5,7 +5,10 @@ import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 import "package:http/http.dart" as http;
 
+import 'AITextToVoice.dart';
+
 class ChatController extends GetxController {
+  TextToScpeechController TTS = Get.put(TextToScpeechController());
   final RxList<ChatModel> chatData = <ChatModel>[
     ChatModel(message: "hello i am nitish kumar ", role: "user"),
     ChatModel(message: "hello i am nitish kumar ", role: "ai"),
@@ -20,24 +23,29 @@ class ChatController extends GetxController {
       "model": "gpt-3.5-turbo",
       "messages": [
         {"role": "user", "content": message.text}
-        // {"role": "user", "content": "Hello!"}
       ],
       "max_tokens": 500,
     };
     Uri uri = Uri.parse("https://api.openai.com/v1/chat/completions");
-    final response = await http.post(uri,
-        headers: {
-          "Content-type": "application/json",
-          "Authorization": "Bearer $OPENAIKEY"
-        },
-        body: json.encode(body));
+    final response = await http.post(
+      uri,
+      headers: {
+        "Content-type": "application/json",
+        "Authorization": "Bearer $OPENAIKEY"
+      },
+      body: json.encode(body),
+    );
     isLoading.value = false;
-    var AIData = jsonDecode(response.body);
-    var newMessage = ChatModel(
-        message: AIData['choices'][0]['message']['content'], role: "ai");
-    chatData.add(newMessage);
-    print(AIData);
-    print(AIData['choices'][0]['message']);
+
+    if (response.statusCode == 200) {
+      var AIData = jsonDecode(response.body);
+      var text = AIData['choices'][0]['message']['content'];
+      var newMessage = ChatModel(message: text, role: "ai");
+      chatData.add(newMessage);
+      TTS.getTextToSpeech(text);
+      print(AIData);
+      print(AIData['choices'][0]['message']);
+    }
   }
 
   void AddMessageToList() {

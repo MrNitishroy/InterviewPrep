@@ -1,14 +1,17 @@
+import 'dart:convert';
+
+import 'package:chatgpt/Controller/AudioController.dart';
 import 'package:get/get.dart';
 import 'package:http/http.dart' as http;
 
-class VoiceController extends GetxController {
-  Future<void> getTextToSpeech() async {
+class TextToScpeechController extends GetxController {
+  SongController songController = Get.put(SongController());
+  Future<void> getTextToSpeech(String text) async {
     final Uri uri = Uri.parse(
         'https://microsoft-edge-text-to-speech.p.rapidapi.com/TTS/EdgeTTS');
 
     final Map<String, String> queryParams = {
-      'text':
-          'Flutter is an open-source UI software development kit created by Google. It is used to develop cross platform applications from a single codebase for any web browser, Fuchsia,',
+      'text': text,
       'voice_name': 'en-US-AriaNeural',
     };
 
@@ -26,6 +29,9 @@ class VoiceController extends GetxController {
       );
 
       if (response.statusCode == 200) {
+        var voiceUrl = response.body;
+        var temp = jsonDecode(response.body);
+        songController.PlaySong(voiceUrl);
         print(response.body);
       } else {
         print('Request failed with status: ${response.statusCode}');

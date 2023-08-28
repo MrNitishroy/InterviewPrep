@@ -16,7 +16,7 @@ class ChatGPT extends StatelessWidget {
       appBar: AppBar(
         leading: IconButton(
           onPressed: () {
-            Get.to(DemoPage());
+            Get.to(const DemoPage());
           },
           icon: Icon(
             Icons.security,
