@@ -1,4 +1,5 @@
 import 'package:chatgpt/Config/Themes.dart';
+import 'package:chatgpt/Pages/Auth/AuthPage.dart';
 import 'package:chatgpt/Pages/ChatGpt.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -13,11 +14,11 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
-      title: 'Flutter Demo',
+      title: 'AI Interview',
       debugShowCheckedModeBanner: false,
       theme: lightTheme,
-      // darkTheme: darkTheme,
-      home: ChatGPT(),
+      darkTheme: darkTheme,
+      home: AuthPage(),
     );
   }
 }

@@ -44,6 +44,7 @@ dependencies:
   just_audio: ^0.9.34
   flutter_tts: ^3.8.1
   speech_to_text: ^6.3.0
+  fluttertoast: ^8.2.2
 dev_dependencies:
   flutter_test:
     sdk: flutter

@@ -5,12 +5,9 @@ import 'package:chatgpt/Controller/ChatController.dart';
 import 'package:chatgpt/Pages/demo.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:lottie/lottie.dart';
 
-import '../Components/ListingButton.dart';
-
-class ChatGPT extends StatelessWidget {
-  const ChatGPT({super.key});
+class ChatPage extends StatelessWidget {
+  const ChatPage({super.key});
 
   @override
   Widget build(BuildContext context) {
