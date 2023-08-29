@@ -12,7 +12,7 @@ class TextToScpeechController extends GetxController {
 
     final Map<String, String> queryParams = {
       'text': text,
-      'voice_name': 'en-US-AriaNeural',
+      'voice_name': 'en-IN-Prabhat',
     };
 
     final Uri fullUri = uri.replace(queryParameters: queryParams);
