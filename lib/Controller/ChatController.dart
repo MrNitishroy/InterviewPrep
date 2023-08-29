@@ -1,5 +1,6 @@
 import 'dart:convert';
 import 'package:chatgpt/Controller/FreeTTS.dart';
+import 'package:chatgpt/Controller/SpeechToTextController.dart';
 import 'package:chatgpt/Model/ChatModel.dart';
 import 'package:chatgpt/PrivateData.dart';
 import 'package:flutter/widgets.dart';
@@ -11,13 +12,14 @@ import 'AITextToVoice.dart';
 class ChatController extends GetxController {
   TextToScpeechController TTS = Get.put(TextToScpeechController());
   FreeTTSController freeTTSController = Get.put(FreeTTSController());
+
+  TextEditingController message = TextEditingController();
   final RxList<ChatModel> chatData = <ChatModel>[
     ChatModel(message: "hello i am nitish kumar ", role: "user"),
     ChatModel(message: "hello i am nitish kumar ", role: "ai"),
   ].obs;
   RxBool isLoading = false.obs;
   int index = 0;
-  TextEditingController message = TextEditingController();
 
   void sendMessage() async {
     isLoading.value = true;

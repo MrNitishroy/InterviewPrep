@@ -16,7 +16,7 @@ class ChatMessage extends StatelessWidget {
       padding: EdgeInsets.all(10),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(10),
-        color: Colors.green[50],
+        color: Theme.of(context).colorScheme.primaryContainer,
       ),
       margin: EdgeInsets.symmetric(vertical: 10),
       child: Column(
@@ -38,7 +38,12 @@ class ChatMessage extends StatelessWidget {
                 child: Row(
               children: [
                 Flexible(
-                  child: Text(message),
+                  child: Text(
+                    message,
+                    style: TextStyle(
+                      fontSize: 15,
+                    ),
+                  ),
                 ),
               ],
             ))

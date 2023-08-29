@@ -1,3 +1,4 @@
+import 'package:chatgpt/Config/Themes.dart';
 import 'package:chatgpt/Pages/ChatGpt.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -14,10 +15,8 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-      ),
+      theme: lightTheme,
+      // darkTheme: darkTheme,
       home: ChatGPT(),
     );
   }

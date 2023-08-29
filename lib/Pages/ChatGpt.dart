@@ -1,9 +1,13 @@
 import 'package:chatgpt/Components/ChatMessage.dart';
+import 'package:chatgpt/Components/TextArea.dart';
+import 'package:chatgpt/Config/Colors.dart';
 import 'package:chatgpt/Controller/ChatController.dart';
 import 'package:chatgpt/Pages/demo.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:lottie/lottie.dart';
+
+import '../Components/ListingButton.dart';
 
 class ChatGPT extends StatelessWidget {
   const ChatGPT({super.key});
@@ -44,38 +48,7 @@ class ChatGPT extends StatelessWidget {
                 ),
               ),
             ),
-            Container(
-              decoration: BoxDecoration(
-                // color: Colors.grey[300],
-                borderRadius: BorderRadius.circular(10),
-              ),
-              child: Row(
-                children: [
-                  Expanded(
-                    child: TextField(
-                      controller: chatController.message,
-                      decoration: InputDecoration(
-                        border: OutlineInputBorder(
-                          borderSide: BorderSide.none,
-                        ),
-                        hintText: "Have you any Question ?",
-                      ),
-                    ),
-                  ),
-                  Obx(
-                    () => IconButton(
-                      onPressed: () {
-                        chatController.AddMessageToList();
-                      },
-                      icon: chatController.isLoading.value
-                          ? Lottie.asset("Assets/Animation/loading.json",
-                              width: 50)
-                          : Icon(Icons.send),
-                    ),
-                  )
-                ],
-              ),
-            ),
+            TextArea(),
           ],
         ),
       ),
