@@ -13,3 +13,9 @@ const dLableColor = Color(0xffB8B8B8);
 const dFontColor = Color(0xffFFFFFF);
 const dprimaryColor = Color(0xffEAA53E);
 const dBorderColor = Color(0xff555555);
+
+
+
+const wel1Color = Colors.white;
+const wel2Color = Color(0xfffddcdf);
+const wel3Color = Color(0xffFfdcbd);
