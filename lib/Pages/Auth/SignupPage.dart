@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import '../../Components/MyButton.dart';
 import '../../Components/MyTextField.dart';
 import '../../Components/PasswordField.dart';
 import '../../Controller/AuthController.dart';
@@ -51,6 +52,24 @@ class SignupPage extends StatelessWidget {
             controller: authController.SignupPwd,
           ),
           SizedBox(height: 30),
+          MyButton(
+            bgColor: Theme.of(context).colorScheme.primary,
+            iconPath: "Assets/Icons/lock.svg",
+            text: "I AM NEW",
+            ontap: () {},
+          ),
+          SizedBox(height: 50),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              MyButton(
+                bgColor: Colors.blue,
+                iconPath: "Assets/Icons/google.svg",
+                text: "GOOGLE",
+                ontap: () {},
+              ),
+            ],
+          ),
         ],
       ),
     );

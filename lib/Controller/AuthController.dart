@@ -8,14 +8,14 @@ class AuthController extends GetxController {
   RxBool isLogin = true.obs;
   RxBool isLoggedIn = false.obs;
   TextEditingController loginEmail = TextEditingController();
-  TextEditingController LoginPwd = TextEditingController();
+  TextEditingController loginPwd = TextEditingController();
   TextEditingController SignupEmail = TextEditingController();
   TextEditingController SignupName = TextEditingController();
   TextEditingController SignupPwd = TextEditingController();
 
   void login() {
-    if (loginEmail.text.isNotEmpty && LoginPwd.text.isNotEmpty) {
-      if (loginEmail.text == "root" && LoginPwd.text == "root") {
+    if (loginEmail.text.isNotEmpty && loginPwd.text.isNotEmpty) {
+      if (loginEmail.text == "root" && loginPwd.text == "root") {
         Fluttertoast.showToast(
           msg: "Login Successfull",
           toastLength: Toast.LENGTH_SHORT,

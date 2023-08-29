@@ -6,6 +6,8 @@ import 'package:chatgpt/Pages/demo.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import '../Components/MyDrawer.dart';
+
 class ChatPage extends StatelessWidget {
   const ChatPage({super.key});
 
@@ -15,17 +17,10 @@ class ChatPage extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        leading: IconButton(
-          onPressed: () {
-            Get.to(const DemoPage());
-          },
-          icon: Icon(
-            Icons.security,
-          ),
-        ),
         centerTitle: true,
         title: Text('ChatGPT'),
       ),
+      drawer: MyDrawer(),
       body: Padding(
         padding: const EdgeInsets.all(10),
         child: Column(
@@ -33,7 +28,6 @@ class ChatPage extends StatelessWidget {
             Obx(
               () => Expanded(
                 child: ListView(
-                  // reverse: true,
                   children: chatController.chatData
                       .map(
                         (e) => ChatMessage(

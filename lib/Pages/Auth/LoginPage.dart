@@ -37,40 +37,42 @@ class LoginPage extends StatelessWidget {
             ],
           ),
           SizedBox(height: 30),
-          SizedBox(height: 30),
           MyTextField(
-            controller: authController.SignupEmail,
+            controller: authController.loginEmail,
             hintText: "Email",
             prefixIcon: Icons.alternate_email_rounded,
           ),
           SizedBox(height: 30),
           MyPasswordField(
-            controller: authController.SignupPwd,
+            controller: authController.loginPwd,
           ),
           SizedBox(height: 30),
           MyButton(
-            icon: Icons.rocket_launch,
+            bgColor: Theme.of(context).colorScheme.primary,
+            iconPath: "Assets/Icons/lock.svg",
             text: "I AM READY",
-            ontap: () {},
+            ontap: () {
+              authController.login();
+            },
           ),
-          SizedBox(height: 120),
+          SizedBox(height: 50),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              MyButton(
+                bgColor: Colors.blue,
+                iconPath: "Assets/Icons/google.svg",
+                text: "GOOGLE",
+                ontap: () {},
+              ),
+            ],
+          ),
+          SizedBox(height: 20),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text("Forgot Password?",
                   style: Theme.of(context).textTheme.bodyMedium)
-            ],
-          ),
-          SizedBox(height: 10),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Flexible(
-                child: Text(
-                    "This is a Learning app where you can learn anything with best and best envirment ",
-                    textAlign: TextAlign.center,
-                    style: Theme.of(context).textTheme.labelMedium),
-              )
             ],
           ),
         ],

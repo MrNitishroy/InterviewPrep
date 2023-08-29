@@ -1,11 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class MyButton extends StatelessWidget {
-  final IconData icon;
+  final String iconPath;
   final String text;
   final VoidCallback ontap;
+  final Color bgColor;
   const MyButton(
-      {super.key, required this.icon, required this.text, required this.ontap});
+      {super.key,
+      required this.iconPath,
+      required this.text,
+      required this.ontap,
+      required this.bgColor});
 
   @override
   Widget build(BuildContext context) {
@@ -15,14 +21,15 @@ class MyButton extends StatelessWidget {
         height: 50,
         padding: EdgeInsets.all(10),
         decoration: BoxDecoration(
-          color: Theme.of(context).colorScheme.primary,
+          color: bgColor,
           borderRadius: BorderRadius.circular(10),
         ),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Icon(
-              icon,
+            SvgPicture.asset(
+              iconPath,
+              width: 20,
               color: Theme.of(context).colorScheme.onBackground,
             ),
             SizedBox(width: 10),
