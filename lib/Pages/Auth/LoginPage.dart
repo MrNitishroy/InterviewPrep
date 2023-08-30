@@ -63,7 +63,9 @@ class LoginPage extends StatelessWidget {
                 bgColor: Colors.blue,
                 iconPath: "Assets/Icons/google.svg",
                 text: "GOOGLE",
-                ontap: () {},
+                ontap: () {
+                  authController.signInWithGoogle();
+                },
               ),
             ],
           ),

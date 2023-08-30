@@ -56,7 +56,9 @@ class SignupPage extends StatelessWidget {
             bgColor: Theme.of(context).colorScheme.primary,
             iconPath: "Assets/Icons/lock.svg",
             text: "I AM NEW",
-            ontap: () {},
+            ontap: () {
+              authController.signupWithEmailAndPassword();
+            },
           ),
           SizedBox(height: 50),
           Row(

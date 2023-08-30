@@ -1,6 +1,8 @@
+import 'package:chatgpt/Controller/AuthController.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:get/get.dart';
 
 class MyDrawer extends StatelessWidget {
   const MyDrawer({
@@ -9,6 +11,7 @@ class MyDrawer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    AuthController authController = Get.put(AuthController());
     return Drawer(
       child: SafeArea(
         child: Padding(
@@ -71,7 +74,9 @@ class MyDrawer extends StatelessWidget {
               SizedBox(height: 10),
               ListTile(
                 trailing: IconButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      authController.signOut();
+                    },
                     icon: Icon(
                       Icons.settings,
                       color: Theme.of(context).colorScheme.onPrimaryContainer,

@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "963095380393",
+    "project_id": "prepinter-fe440",
+    "storage_bucket": "prepinter-fe440.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:963095380393:android:08c9d8e44564af9e9284b8",
+        "android_client_info": {
+          "package_name": "com.example.chatgpt"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "963095380393-kk6ll6ohoegsaefus0jbk4s1kljs1cjq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBYWY_R_S_7gbDVrujbOJ48E5KpG5gsq7o"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "963095380393-kk6ll6ohoegsaefus0jbk4s1kljs1cjq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -139,7 +139,7 @@ class WelcomePage extends StatelessWidget {
                     Spacer(),
                     InkWell(
                       onTap: () {
-                        Get.offAllNamed("/ChatPage");
+                        Get.offAllNamed("/authPage");
                       },
                       child: Container(
                         padding:
