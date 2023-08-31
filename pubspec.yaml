@@ -48,7 +48,9 @@ dependencies:
   liquid_swipe: ^3.1.0
   firebase_core: ^2.15.1
   firebase_auth: ^4.8.0
+  google_nav_bar: ^5.0.6
   google_sign_in: ^6.1.5
+  carousel_slider: ^4.2.1
 dev_dependencies:
   flutter_test:
     sdk: flutter

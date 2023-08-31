@@ -17,7 +17,7 @@ class SplaceController extends GetxController {
     Future.delayed(Duration(seconds: 4), () {
       print(user);
       if (user != null) {
-        Get.offAllNamed("/ChatPage");
+        Get.offAllNamed("/homePage");
       } else {
         Get.offAllNamed("/welcome");
       }

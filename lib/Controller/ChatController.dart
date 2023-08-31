@@ -53,6 +53,38 @@ class ChatController extends GetxController {
     }
   }
 
+  void sendPrompt(String prompt) async {
+    isLoading.value = true;
+    Map<String, dynamic> body = {
+      "model": "gpt-3.5-turbo",
+      "messages": [
+        {"role": "user", "content": prompt}
+      ],
+      "max_tokens": 500,
+    };
+    Uri uri = Uri.parse("https://api.openai.com/v1/chat/completions");
+    final response = await http.post(
+      uri,
+      headers: {
+        "Content-type": "application/json",
+        "Authorization": "Bearer $OPENAIKEY"
+      },
+      body: json.encode(body),
+    );
+    isLoading.value = false;
+
+    if (response.statusCode == 200) {
+      var AIData = jsonDecode(response.body);
+      var text = AIData['choices'][0]['message']['content'];
+      var newMessage = ChatModel(message: text, role: "ai");
+      chatData.add(newMessage);
+      // TTS.getTextToSpeech(text);
+      freeTTSController.TTSConverter(text);
+      print(AIData);
+      print(AIData['choices'][0]['message']);
+    }
+  }
+
   void AddMessageToList() {
     var newMessage = ChatModel(message: message.text, role: "user");
     if (message.text.isEmpty || isLoading.value) {

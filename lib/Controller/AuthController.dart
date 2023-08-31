@@ -16,6 +16,22 @@ class AuthController extends GetxController {
   TextEditingController SignupPwd = TextEditingController();
 
   final firebaseAuth = FirebaseAuth.instance;
+  User? user;
+  RxString firstName = "Groot".obs;
+  @override
+  void onInit() {
+    // TODO: implement onInit
+    super.onInit();
+    user = firebaseAuth.currentUser;
+    getFirstName();
+  }
+
+  void getFirstName() {
+    var name = user!.displayName;
+    List<String> arrName = name!.split(' ');
+    firstName.value = arrName.isNotEmpty ? arrName[0] : "User";
+    print(firstName);
+  }
 
   void loginWithEmailAndPassword() async {
     if (loginEmail.text.isNotEmpty && loginPwd.text.isNotEmpty) {

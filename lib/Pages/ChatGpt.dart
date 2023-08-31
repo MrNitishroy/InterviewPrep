@@ -1,6 +1,8 @@
 import 'package:chatgpt/Components/ChatMessage.dart';
+import 'package:chatgpt/Components/HomePormpt.dart';
 import 'package:chatgpt/Components/TextArea.dart';
 import 'package:chatgpt/Config/Colors.dart';
+import 'package:chatgpt/Config/Data.dart';
 import 'package:chatgpt/Controller/ChatController.dart';
 import 'package:chatgpt/Controller/ThemeController.dart';
 import 'package:chatgpt/Pages/demo.dart';
@@ -39,9 +41,26 @@ class ChatPage extends StatelessWidget {
       ),
       drawer: MyDrawer(),
       body: Padding(
-        padding: const EdgeInsets.all(10),
+        padding: EdgeInsets.all(10),
         child: Column(
           children: [
+            Wrap(
+              spacing: 10,
+              runSpacing: 10,
+              children: conversetionPrompt
+                  .map(
+                    (e) => HomePrompts(
+                      prompt: e.prompt.toString(),
+                      title: e.title.toString(),
+                    ),
+                  )
+                  .toList(),
+            ),
+            SizedBox(height: 10),
+            Divider(
+              color: Theme.of(context).colorScheme.outline,
+              thickness: 2,
+            ),
             Obx(
               () => Expanded(
                 child: ListView(
