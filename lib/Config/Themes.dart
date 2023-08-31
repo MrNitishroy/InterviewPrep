@@ -42,6 +42,11 @@ var lightTheme = ThemeData(
       fontWeight: FontWeight.w600,
       color: lLableColor,
     ),
+    bodyLarge: TextStyle(
+      fontSize: 18,
+      fontWeight: FontWeight.w500,
+      color: lFontColor,
+    ),
   ),
 );
 
@@ -85,6 +90,11 @@ var darkTheme = ThemeData(
       fontSize: 20,
       fontWeight: FontWeight.w600,
       color: dLableColor,
+    ),
+    bodyLarge: TextStyle(
+      fontSize: 18,
+      fontWeight: FontWeight.w500,
+      color: dFontColor,
     ),
   ),
 );
