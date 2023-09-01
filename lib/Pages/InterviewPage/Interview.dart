@@ -95,7 +95,7 @@ class InterviewPage extends StatelessWidget {
                           SizedBox(width: 10),
                           Flexible(
                             child: Text(
-                              "I name is nitish kumar my fater name is surendra prasad i have complete my 10th and 12th ",
+                              interviewController.userAnswer.value,
                               style: TextStyle(
                                 color: Colors.black,
                                 fontSize: 20,

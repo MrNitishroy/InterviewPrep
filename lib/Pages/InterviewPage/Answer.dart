@@ -19,20 +19,21 @@ class InterviewAnswer extends StatelessWidget {
         color: Colors.white,
         borderRadius: BorderRadius.circular(10),
       ),
-      child: const Row(
+      child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Icon(Icons.record_voice_over, size: 20, color: Colors.black),
           SizedBox(width: 10),
           Flexible(
-            child: Text(
-              "I name is nitish kumar my fater name is surendra prasad i have complete my 10th and 12th ",
+              child: Obx(
+            () => Text(
+              interviewController.userAnswer.value,
               style: TextStyle(
                 color: Colors.black,
                 fontSize: 20,
               ),
             ),
-          ),
+          )),
         ],
       ),
     );
