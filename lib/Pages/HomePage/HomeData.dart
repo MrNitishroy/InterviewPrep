@@ -71,7 +71,32 @@ class HomeData extends StatelessWidget {
                     iconPath: "Assets/Icons/lock.svg",
                   ),
                 ).toList(),
-              )
+              ),
+              SizedBox(height: 10),
+              Row(
+                children: [
+                  Text(
+                    "Tens Practice",
+                    style: Theme.of(context).textTheme.labelMedium,
+                  ),
+                ],
+              ),
+              SizedBox(height: 10),
+              Column(
+                children: tensQuestions
+                    .map(
+                      (e) => InterviewCategory(
+                        ontap: () {
+                          Get.to(QuestionLevelPage(
+                            data: e,
+                          ));
+                        },
+                        title: e.title.toString(),
+                        iconPath: "Assets/Icons/lock.svg",
+                      ),
+                    )
+                    .toList(),
+              ),
             ],
           ),
         ),

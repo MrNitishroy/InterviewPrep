@@ -107,21 +107,22 @@ var QuestionData = [
             ),
           ]),
       QuestionLevel(
-          level: "Level 2",
-          isCompeleted: false,
-          totalScore: 0,
-          listOfQuestion: [
-            ListOfQuestion(
-              question: "Tell me about your self",
-              answer: "",
-              userAnswer: "",
-            ),
-            ListOfQuestion(
-              question: "What is your salary expactetion",
-              answer: "",
-              userAnswer: "",
-            ),
-          ]),
+        level: "Level 2",
+        isCompeleted: false,
+        totalScore: 0,
+        listOfQuestion: [
+          ListOfQuestion(
+            question: "Tell me about your self",
+            answer: "",
+            userAnswer: "",
+          ),
+          ListOfQuestion(
+            question: "What is your salary expactetion",
+            answer: "",
+            userAnswer: "",
+          ),
+        ],
+      ),
     ],
   ),
   QuestionModel(
@@ -176,6 +177,171 @@ var QuestionData = [
               userAnswer: "",
             ),
           ]),
+    ],
+  ),
+];
+
+var tensQuestions = [
+  QuestionModel(
+    title: "Present Tense",
+    isCompleted: false,
+    questionLevel: [
+      QuestionLevel(
+        level: "Simple Present Tense",
+        isCompeleted: false,
+        totalScore: 0,
+        listOfQuestion: [
+          ListOfQuestion(
+            question: "Mai Daily School jata hu",
+            answer: "go",
+            userAnswer: "",
+          ),
+        ],
+      ),
+      QuestionLevel(
+        level: "Present Continuous Tense",
+        isCompeleted: false,
+        totalScore: 0,
+        listOfQuestion: [
+          ListOfQuestion(
+            question: "Mai Daily School jata hu",
+            answer: "go",
+            userAnswer: "",
+          ),
+        ],
+      ),
+      QuestionLevel(
+        level: "Present Perfect Tense",
+        isCompeleted: false,
+        totalScore: 0,
+        listOfQuestion: [
+          ListOfQuestion(
+            question: "Mai Daily School jata hu",
+            answer: "go",
+            userAnswer: "",
+          ),
+        ],
+      ),
+      QuestionLevel(
+        level: "Present Perfect Continuous Tense",
+        isCompeleted: false,
+        totalScore: 0,
+        listOfQuestion: [
+          ListOfQuestion(
+            question: "Mai Daily School jata hu",
+            answer: "go",
+            userAnswer: "",
+          ),
+        ],
+      ),
+    ],
+  ),
+  QuestionModel(
+    title: "Past Tense",
+    isCompleted: false,
+    questionLevel: [
+      QuestionLevel(
+        level: "Simple Past Tense",
+        isCompeleted: false,
+        totalScore: 0,
+        listOfQuestion: [
+          ListOfQuestion(
+            question: "Mai Daily School jata hu",
+            answer: "go",
+            userAnswer: "",
+          ),
+        ],
+      ),
+      QuestionLevel(
+        level: "Past Continuous Tense",
+        isCompeleted: false,
+        totalScore: 0,
+        listOfQuestion: [
+          ListOfQuestion(
+            question: "Mai Daily School jata hu",
+            answer: "go",
+            userAnswer: "",
+          ),
+        ],
+      ),
+      QuestionLevel(
+        level: "Past Perfect Tense",
+        isCompeleted: false,
+        totalScore: 0,
+        listOfQuestion: [
+          ListOfQuestion(
+            question: "Mai Daily School jata hu",
+            answer: "go",
+            userAnswer: "",
+          ),
+        ],
+      ),
+      QuestionLevel(
+        level: "Past Perfect Continuous Tense",
+        isCompeleted: false,
+        totalScore: 0,
+        listOfQuestion: [
+          ListOfQuestion(
+            question: "Mai Daily School jata hu",
+            answer: "go",
+            userAnswer: "",
+          ),
+        ],
+      ),
+    ],
+  ),
+  QuestionModel(
+    title: "Future Tense",
+    isCompleted: false,
+    questionLevel: [
+      QuestionLevel(
+        level: "Simple Future Tense",
+        isCompeleted: false,
+        totalScore: 0,
+        listOfQuestion: [
+          ListOfQuestion(
+            question: "Mai Daily School jata hu",
+            answer: "go",
+            userAnswer: "",
+          ),
+        ],
+      ),
+      QuestionLevel(
+        level: "Future Continuous Tense",
+        isCompeleted: false,
+        totalScore: 0,
+        listOfQuestion: [
+          ListOfQuestion(
+            question: "Mai Daily School jata hu",
+            answer: "go",
+            userAnswer: "",
+          ),
+        ],
+      ),
+      QuestionLevel(
+        level: "Future Perfect Tense",
+        isCompeleted: false,
+        totalScore: 0,
+        listOfQuestion: [
+          ListOfQuestion(
+            question: "Mai Daily School jata hu",
+            answer: "go",
+            userAnswer: "",
+          ),
+        ],
+      ),
+      QuestionLevel(
+        level: "Future Perfect Continuous Tense",
+        isCompeleted: false,
+        totalScore: 0,
+        listOfQuestion: [
+          ListOfQuestion(
+            question: "Mai Daily School jata hu",
+            answer: "go",
+            userAnswer: "",
+          ),
+        ],
+      ),
     ],
   ),
 ];

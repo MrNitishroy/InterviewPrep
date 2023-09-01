@@ -29,9 +29,11 @@ class QuestionLevelPage extends StatelessWidget {
                       margin: EdgeInsets.all(10),
                       padding: EdgeInsets.all(10),
                       decoration: BoxDecoration(
-                        color: Theme.of(context).colorScheme.primaryContainer,
-                        borderRadius: BorderRadius.circular(10),
-                      ),
+                          color: Theme.of(context).colorScheme.primaryContainer,
+                          borderRadius: BorderRadius.circular(10),
+                          border: Border.all(
+                            color: Theme.of(context).colorScheme.outline,
+                          )),
                       child: Row(
                         children: [
                           e.isCompeleted!
@@ -46,12 +48,12 @@ class QuestionLevelPage extends StatelessWidget {
                                   color: Theme.of(context).colorScheme.primary,
                                 ),
                           SizedBox(width: 10),
-                          Column(
-                            mainAxisAlignment: MainAxisAlignment.start,
+                          Expanded(
+                              child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text(
-                                e.level!,
+                                e.level.toString(),
                                 style: Theme.of(context).textTheme.bodyLarge,
                               ),
                               e.isCompeleted!
@@ -83,8 +85,7 @@ class QuestionLevelPage extends StatelessWidget {
                                       ),
                                     ),
                             ],
-                          ),
-                          Spacer(),
+                          )),
                           Icon(
                             Icons.arrow_forward_ios,
                             size: 16,

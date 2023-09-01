@@ -79,6 +79,7 @@ var darkTheme = ThemeData(
     ),
     labelMedium: TextStyle(
       fontSize: 15,
+      fontWeight: FontWeight.w400,
       color: dLableColor,
     ),
     headlineLarge: TextStyle(
