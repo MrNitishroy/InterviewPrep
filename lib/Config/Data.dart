@@ -44,6 +44,51 @@ var QuestionData = [
               answer: "",
               userAnswer: "",
             ),
+            ListOfQuestion(
+              question: "What is your salary expactetion",
+              answer: "",
+              userAnswer: "",
+            ),
+            ListOfQuestion(
+              question: "What is your salary expactetion",
+              answer: "",
+              userAnswer: "",
+            ),
+            ListOfQuestion(
+              question: "What is your salary expactetion",
+              answer: "",
+              userAnswer: "",
+            ),
+            ListOfQuestion(
+              question: "What is your salary expactetion",
+              answer: "",
+              userAnswer: "",
+            ),
+            ListOfQuestion(
+              question: "What is your salary expactetion",
+              answer: "",
+              userAnswer: "",
+            ),
+            ListOfQuestion(
+              question: "What is your salary expactetion",
+              answer: "",
+              userAnswer: "",
+            ),
+            ListOfQuestion(
+              question: "What is your salary expactetion",
+              answer: "",
+              userAnswer: "",
+            ),
+            ListOfQuestion(
+              question: "What is your salary expactetion",
+              answer: "",
+              userAnswer: "",
+            ),
+            ListOfQuestion(
+              question: "What is ",
+              answer: "",
+              userAnswer: "",
+            ),
           ]),
       QuestionLevel(
           level: "Level 2",

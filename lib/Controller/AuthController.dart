@@ -20,17 +20,18 @@ class AuthController extends GetxController {
   RxString firstName = "Groot".obs;
   @override
   void onInit() {
-    // TODO: implement onInit
     super.onInit();
     user = firebaseAuth.currentUser;
     getFirstName();
   }
 
   void getFirstName() {
-    var name = user!.displayName;
-    List<String> arrName = name!.split(' ');
-    firstName.value = arrName.isNotEmpty ? arrName[0] : "User";
-    print(firstName);
+    if (user != null) {
+      var name = user!.displayName;
+      List<String> arrName = name!.split(' ');
+      firstName.value = arrName.isNotEmpty ? arrName[0] : "User";
+      print(firstName);
+    }
   }
 
   void loginWithEmailAndPassword() async {
@@ -192,7 +193,7 @@ class AuthController extends GetxController {
 
         final UserCredential userCredential =
             await firebaseAuth.signInWithCredential(authCredential);
-        Get.offAllNamed("/ChatPage");
+        Get.offAllNamed("/homePage");
       } else {}
     } catch (error) {
       print("An error occurred: $error");

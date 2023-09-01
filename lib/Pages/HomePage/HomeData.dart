@@ -2,12 +2,9 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:chatgpt/Components/Home/ListCategory.dart';
 import 'package:chatgpt/Components/Home/UserInfo.dart';
 import 'package:chatgpt/Config/Data.dart';
-import 'package:chatgpt/Controller/AuthController.dart';
 import 'package:chatgpt/Controller/HomeController.dart';
 import 'package:chatgpt/Pages/QuestionLevel/QuestionLevel.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 
 class HomeData extends StatelessWidget {
@@ -22,7 +19,7 @@ class HomeData extends StatelessWidget {
         child: SingleChildScrollView(
           child: Column(
             children: [
-              SizedBox(height: 20),
+              SizedBox(height: 30),
               UserInfo(),
               SizedBox(height: 20),
               Row(

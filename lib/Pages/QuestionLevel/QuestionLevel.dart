@@ -1,6 +1,9 @@
 import 'package:chatgpt/Model/QuestionModel.dart';
+import 'package:chatgpt/Pages/InterviewPage/InterivewTips.dart';
+import 'package:chatgpt/Pages/InterviewPage/Interview.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class QuestionLevelPage extends StatelessWidget {
   final QuestionModel data;
@@ -17,7 +20,11 @@ class QuestionLevelPage extends StatelessWidget {
       body: Column(
         children: data.questionLevel!
             .map((e) => InkWell(
-                  onTap: () {},
+                  onTap: () {
+                    Get.to(
+                      InterviewTips(e: e),
+                    );
+                  },
                   child: Container(
                       margin: EdgeInsets.all(10),
                       padding: EdgeInsets.all(10),
@@ -44,7 +51,7 @@ class QuestionLevelPage extends StatelessWidget {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text(
-                                "Level 1 ",
+                                e.level!,
                                 style: Theme.of(context).textTheme.bodyLarge,
                               ),
                               e.isCompeleted!
@@ -56,7 +63,7 @@ class QuestionLevelPage extends StatelessWidget {
                                         borderRadius: BorderRadius.circular(10),
                                       ),
                                       child: Text(
-                                        "Your Score 80%",
+                                        "Your Score ${e.totalScore}",
                                         style: Theme.of(context)
                                             .textTheme
                                             .bodySmall,

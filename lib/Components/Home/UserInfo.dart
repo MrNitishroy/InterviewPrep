@@ -10,7 +10,7 @@ class UserInfo extends StatelessWidget {
   Widget build(BuildContext context) {
     AuthController authController = Get.put(AuthController());
     return Container(
-      padding: EdgeInsets.all(20),
+      padding: EdgeInsets.all(10),
       width: double.infinity,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(20),
@@ -24,8 +24,8 @@ class UserInfo extends StatelessWidget {
                 borderRadius: BorderRadius.circular(30),
                 child: Image.asset(
                   "Assets/Image/profile.png",
-                  width: 90,
-                  height: 90,
+                  width: 70,
+                  height: 70,
                 ),
               ),
               SizedBox(width: 10),
