@@ -1,3 +1,5 @@
+import 'package:camera/camera.dart';
+import 'package:chatgpt/Controller/CameraController.dart';
 import 'package:chatgpt/Controller/InterviewController.dart';
 import 'package:chatgpt/Model/QuestionModel.dart';
 import 'package:chatgpt/Pages/InterviewPage/InterviewQuestion.dart';
@@ -14,6 +16,7 @@ class InterviewPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     InterviewController interviewController = Get.put(InterviewController());
+    ICameraController iCameraController = Get.put(ICameraController());
     interviewController.questionLevel = e;
     return Scaffold(
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
@@ -52,9 +55,24 @@ class InterviewPage extends StatelessWidget {
       ),
       body: Stack(
         children: [
+          // CameraPreview(iCameraController.cameraController),
           Container(
-            height: double.infinity,
-            color: Colors.grey,
+            // alignment: Alignment.center,
+            height: context.height,
+            // color: Colors.grey,
+            child: CameraPreview(iCameraController.cameraController),
+          ),
+          Align(
+            alignment: Alignment.bottomLeft,
+            child: IconButton(
+              onPressed: () {
+                
+              },
+              icon: Icon(
+                Icons.camera_indoor,
+                color: Colors.black,
+              ),
+            ),
           ),
           Positioned(
             top: 20,
