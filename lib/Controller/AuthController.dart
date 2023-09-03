@@ -193,7 +193,7 @@ class AuthController extends GetxController {
 
         final UserCredential userCredential =
             await firebaseAuth.signInWithCredential(authCredential);
-        Get.offAllNamed("/homePage");
+        Get.offAllNamed("/permission");
       } else {}
     } catch (error) {
       print("An error occurred: $error");

@@ -40,7 +40,22 @@ var QuestionData = [
               userAnswer: "",
             ),
             ListOfQuestion(
+              question: "What is your long term goal and short term goal",
+              answer: "",
+              userAnswer: "",
+            ),
+            ListOfQuestion(
               question: "What is your salary expactetion",
+              answer: "",
+              userAnswer: "",
+            ),
+            ListOfQuestion(
+              question: "Why should i hire you",
+              answer: "",
+              userAnswer: "",
+            ),
+            ListOfQuestion(
+              question: "Are you willing to relocate",
               answer: "",
               userAnswer: "",
             ),
@@ -65,22 +80,7 @@ var QuestionData = [
               userAnswer: "",
             ),
             ListOfQuestion(
-              question: "What is your salary expactetion",
-              answer: "",
-              userAnswer: "",
-            ),
-            ListOfQuestion(
-              question: "What is your salary expactetion",
-              answer: "",
-              userAnswer: "",
-            ),
-            ListOfQuestion(
-              question: "What is your salary expactetion",
-              answer: "",
-              userAnswer: "",
-            ),
-            ListOfQuestion(
-              question: "What is your salary expactetion",
+              question: "Do you have any Question For me",
               answer: "",
               userAnswer: "",
             ),
@@ -345,3 +345,41 @@ var tensQuestions = [
     ],
   ),
 ];
+
+
+
+void demo() {
+  String response = "Certainly, here are the scores for each section:\n\nIntroduction: 8/10\n\nShort-term and Long-term Goals:\n\nShort-term goal: 7/10\nLong-term goal: 8/10\nWhy should I hire you? 7/10\n\nGreatest Strength and Weakness:\n\nGreatest strength: 9/10\nWeakness: 5/10";
+
+  // Regular expressions to extract scores
+  RegExp introductionScoreRegex = RegExp(r'Introduction: (\d+)/(\d+)');
+  RegExp shortTermGoalScoreRegex = RegExp(r'Short-term goal: (\d+)/(\d+)');
+  RegExp longTermGoalScoreRegex = RegExp(r'Long-term goal: (\d+)/(\d+)');
+  RegExp hireYouScoreRegex = RegExp(r'Why should I hire you\? (\d+)/(\d+)');
+  RegExp greatestStrengthScoreRegex = RegExp(r'Greatest strength: (\d+)/(\d+)');
+  RegExp weaknessScoreRegex = RegExp(r'Weakness: (\d+)/(\d+)');
+
+  // Extract scores
+  var introductionMatch = introductionScoreRegex.firstMatch(response);
+  var shortTermGoalMatch = shortTermGoalScoreRegex.firstMatch(response);
+  var longTermGoalMatch = longTermGoalScoreRegex.firstMatch(response);
+  var hireYouMatch = hireYouScoreRegex.firstMatch(response);
+  var greatestStrengthMatch = greatestStrengthScoreRegex.firstMatch(response);
+  var weaknessMatch = weaknessScoreRegex.firstMatch(response);
+
+  // Store scores in variables
+  String introductionScore = introductionMatch?.group(0) ?? "N/A";
+  String shortTermGoalScore = shortTermGoalMatch?.group(0) ?? "N/A";
+  String longTermGoalScore = longTermGoalMatch?.group(0) ?? "N/A";
+  String hireYouScore = hireYouMatch?.group(0) ?? "N/A";
+  String greatestStrengthScore = greatestStrengthMatch?.group(0) ?? "N/A";
+  String weaknessScore = weaknessMatch?.group(0) ?? "N/A";
+
+  // Print the scores
+  print("Introduction Score: $introductionScore");
+  print("Short-term Goal Score: $shortTermGoalScore");
+  print("Long-term Goal Score: $longTermGoalScore");
+  print("Why should I hire you Score: $hireYouScore");
+  print("Greatest Strength Score: $greatestStrengthScore");
+  print("Weakness Score: $weaknessScore");
+}

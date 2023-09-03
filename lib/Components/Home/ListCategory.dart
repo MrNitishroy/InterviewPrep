@@ -1,6 +1,9 @@
+import 'package:chatgpt/Components/Home/PercentageIndicator.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+
+import '../Interview/MyPercentageIndicator.dart';
 
 class InterviewCategory extends StatelessWidget {
   final String title;
@@ -26,27 +29,42 @@ class InterviewCategory extends StatelessWidget {
           ),
         ),
         child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Container(
-              padding: EdgeInsets.all(15),
-              decoration: BoxDecoration(
-                color: Theme.of(context).colorScheme.background,
-                borderRadius: BorderRadius.circular(
-                  10,
+            Row(
+              children: [
+                Container(
+                  padding: EdgeInsets.all(15),
+                  decoration: BoxDecoration(
+                    color: Theme.of(context).colorScheme.background,
+                    borderRadius: BorderRadius.circular(
+                      10,
+                    ),
+                  ),
+                  child: SvgPicture.asset(
+                    iconPath,
+                    width: 30,
+                    height: 30,
+                    color: Theme.of(context).colorScheme.onBackground,
+                  ),
                 ),
-              ),
-              child: SvgPicture.asset(
-                iconPath,
-                width: 30,
-                height: 30,
-                color: Theme.of(context).colorScheme.onBackground,
-              ),
+                SizedBox(width: 10),
+                Text(
+                  title,
+                  style: Theme.of(context).textTheme.bodyLarge,
+                ),
+              ],
             ),
-            SizedBox(width: 10),
-            Text(
-              title,
-              style: Theme.of(context).textTheme.bodyLarge,
-            )
+            // MyPercentageIndicator(
+            //   percent: 100,
+            //   fontSize: 15,
+            //   lineWidth: 6,
+            //   redius: 30,
+            // ),
+
+            HomePercentageIndicator(
+              percent: 20,
+            ),
           ],
         ),
       ),

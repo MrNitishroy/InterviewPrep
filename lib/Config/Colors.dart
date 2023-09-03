@@ -5,16 +5,24 @@ const lBgColor = Color(0xffFFFFFF);
 const lLableColor = Color(0xff8E8E8E);
 const lFontColor = Color(0xff000000);
 const lprimaryColor = Color(0xff0F6DFB);
+const lsecondryColor = Color(0xff0F6DFB);
 const lBorderColor = Color(0xffB5D2FF);
+
+// const dDivColor = Color(0xff3D3C40);
+// const dSecondDivColor = Color(0xff313033);
+// const dBgColor = Color(0xff1D1D1F);
+// const dLableColor = Color(0xffB8B8B8);
+// const dFontColor = Color(0xffFFFFFF);
+// const dprimaryColor = Color(0xff6562FC);
+// const dBorderColor = Color(0xff555555);
 
 const dDivColor = Color(0xff555555);
 const dBgColor = Color(0xff424242);
 const dLableColor = Color(0xffB8B8B8);
 const dFontColor = Color(0xffFFFFFF);
 const dprimaryColor = Color(0xffEAA53E);
+const dsecondryColor = Color(0xff68635A);
 const dBorderColor = Color(0xff555555);
-
-
 
 const wel1Color = Colors.white;
 const wel2Color = Color(0xfffddcdf);
