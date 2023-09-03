@@ -52,7 +52,9 @@ dependencies:
   google_sign_in: ^6.1.5
   carousel_slider: ^4.2.1
   camera: ^0.10.5+4
-  highlight_text: ^1.7.0
+  permission_handler: ^10.4.3
+  confetti: ^0.7.0
+  percent_indicator: ^4.2.3
 dev_dependencies:
   flutter_test:
     sdk: flutter
