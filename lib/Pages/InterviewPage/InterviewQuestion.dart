@@ -24,11 +24,13 @@ class InterviewQuestion extends StatelessWidget {
         children: [
           Icon(Icons.question_mark, size: 20, color: Colors.black),
           SizedBox(width: 10),
-          Text(
-            interviewController.question.value,
-            style: TextStyle(
-              color: Colors.black,
-              fontSize: 20,
+          Flexible(
+            child: Text(
+              interviewController.question.value,
+              style: TextStyle(
+                color: Colors.black,
+                fontSize: 20,
+              ),
             ),
           ),
         ],
