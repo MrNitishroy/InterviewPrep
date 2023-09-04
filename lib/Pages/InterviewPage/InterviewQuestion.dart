@@ -27,7 +27,7 @@ class InterviewQuestion extends StatelessWidget {
           Flexible(
             child: Text(
               interviewController.question.value,
-              style: TextStyle(
+              style: const TextStyle(
                 color: Colors.black,
                 fontSize: 20,
               ),

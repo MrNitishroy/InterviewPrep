@@ -1,27 +1,41 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:chatgpt/Components/Home/ListCategory.dart';
 import 'package:chatgpt/Components/Home/UserInfo.dart';
+import 'package:chatgpt/Components/PrimaryDrawer.dart';
 import 'package:chatgpt/Config/Data.dart';
 import 'package:chatgpt/Controller/HomeController.dart';
+import 'package:chatgpt/Pages/HomePage/HeaderUserInfo.dart';
 import 'package:chatgpt/Pages/QuestionLevel/QuestionLevel.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 
 class HomeData extends StatelessWidget {
-  const HomeData({super.key});
+  final GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
+
+  void openDrawer() {
+    print("Open");
+    scaffoldKey.currentState?.openDrawer();
+  }
 
   @override
   Widget build(BuildContext context) {
     HomeController homeController = Get.put(HomeController());
+
     return Scaffold(
+      drawer: PrimaryDrawer(),
       body: Padding(
         padding: const EdgeInsets.all(10),
         child: SingleChildScrollView(
           child: Column(
             children: [
               SizedBox(height: 30),
-              UserInfo(),
+              HeaderUserInfo(
+                openDrawer: openDrawer,
+              ),
               SizedBox(height: 20),
+              // UserInfo(),
+              // SizedBox(height: 20),
               Row(
                 children: [
                   Text(

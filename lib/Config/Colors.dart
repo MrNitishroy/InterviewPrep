@@ -27,3 +27,7 @@ const dBorderColor = Color(0xff555555);
 const wel1Color = Colors.white;
 const wel2Color = Color(0xfffddcdf);
 const wel3Color = Color(0xffFfdcbd);
+
+const greenColor = Color(0xff0CC800);
+const oragngeColor = Color(0xffEAA53E);
+const blueColor = Color(0xff0F6DFB);
