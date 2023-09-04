@@ -10,24 +10,11 @@ class SplacePage extends StatelessWidget {
   Widget build(BuildContext context) {
     SplaceController splaceController = Get.put(SplaceController());
     return Scaffold(
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Lottie.asset(
-            'Assets/Animation/logo.json',
-          ),
-          Text(
-            "INTERVIEW PREP",
-            style: TextStyle(
-              color: Theme.of(context).colorScheme.primary,
-              fontSize: 20,
-              letterSpacing: 1.6,
-              fontWeight: FontWeight.bold,
-            ),
-          ),
-        ],
+        body: Center(
+      child: Image.asset(
+        "Assets/Icons/AppIcons/applogo.png",
+        width: 100,
       ),
-    );
+    ));
   }
 }

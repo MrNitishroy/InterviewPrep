@@ -54,7 +54,7 @@ class InterviewTips extends StatelessWidget {
               SizedBox(width: 10),
               Text(
                 "Prepare you self for the interview",
-                style: Theme.of(context).textTheme.bodyMedium,
+                style: Theme.of(context).textTheme.bodySmall,
               ),
             ],
           ),
@@ -69,7 +69,7 @@ class InterviewTips extends StatelessWidget {
               SizedBox(width: 10),
               Text(
                 "All Question are related to your profile",
-                style: Theme.of(context).textTheme.bodyMedium,
+                style: Theme.of(context).textTheme.bodySmall,
               ),
             ],
           ),
@@ -84,7 +84,7 @@ class InterviewTips extends StatelessWidget {
               SizedBox(width: 10),
               Text(
                 "Keep straight and look at the camera",
-                style: Theme.of(context).textTheme.bodyMedium,
+                style: Theme.of(context).textTheme.bodySmall,
               ),
             ],
           ),
@@ -99,7 +99,7 @@ class InterviewTips extends StatelessWidget {
               SizedBox(width: 10),
               Text(
                 "Keep your background clean and tidy",
-                style: Theme.of(context).textTheme.bodyMedium,
+                style: Theme.of(context).textTheme.bodySmall,
               ),
             ],
           ),
@@ -114,7 +114,7 @@ class InterviewTips extends StatelessWidget {
               SizedBox(width: 10),
               Text(
                 "Keep your phone on silent mode",
-                style: Theme.of(context).textTheme.bodyMedium,
+                style: Theme.of(context).textTheme.bodySmall,
               ),
             ],
           ),
@@ -131,7 +131,7 @@ class InterviewTips extends StatelessWidget {
               ),
               child: Text(
                 "I AM READY",
-                style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                style: Theme.of(context).textTheme.bodySmall?.copyWith(
                       fontWeight: FontWeight.bold,
                     ),
               ),

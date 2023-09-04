@@ -117,5 +117,11 @@ var darkTheme = ThemeData(
       fontWeight: FontWeight.w500,
       color: dFontColor,
     ),
+    headlineSmall: TextStyle(
+      fontSize: 20,
+      fontFamily: "Rubik",
+      fontWeight: FontWeight.w400,
+      color: dFontColor,
+    ),
   ),
 );

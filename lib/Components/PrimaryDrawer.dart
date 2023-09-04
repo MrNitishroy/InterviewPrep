@@ -1,4 +1,5 @@
 import 'package:chatgpt/Controller/AuthController.dart';
+import 'package:chatgpt/Pages/demo.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
@@ -16,69 +17,10 @@ class PrimaryDrawer extends StatelessWidget {
           padding: const EdgeInsets.all(10),
           child: Column(
             children: [
-              InkWell(
-                onTap: () {},
-                child: Container(
-                  padding: EdgeInsets.all(10),
-                  decoration: BoxDecoration(
-                    color: Theme.of(context).colorScheme.primaryContainer,
-                    borderRadius: BorderRadius.circular(10),
-                  ),
-                  child: Row(
-                    children: [
-                      Icon(
-                        Icons.add,
-                        color: Theme.of(context).colorScheme.onBackground,
-                      ),
-                      SizedBox(width: 20),
-                      Text(
-                        "New Session",
-                        style: Theme.of(context).textTheme.bodyMedium,
-                      )
-                    ],
-                  ),
-                ),
-              ),
-              SizedBox(height: 10),
-              Row(
-                children: [
-                  Text(
-                    "History",
-                    style: Theme.of(context).textTheme.labelMedium,
-                  ),
-                ],
-              ),
-              Expanded(
-                child: ListView.builder(
-                  itemCount: 20,
-                  itemBuilder: (context, index) {
-                    return ListTile(
-                      onTap: () {},
-                      leading: SvgPicture.asset(
-                        "Assets/Icons/message.svg",
-                        color: Theme.of(context).colorScheme.onPrimaryContainer,
-                      ),
-                      title: Text(
-                        "This is my last message sjdhf sdfhsj ",
-                        maxLines: 1,
-                        style: Theme.of(context).textTheme.labelMedium,
-                      ),
-                    );
-                  },
-                ),
-              ),
-              SizedBox(height: 10),
-              Divider(),
-              SizedBox(height: 10),
               ListTile(
-                trailing: IconButton(
-                    onPressed: () {
-                      authController.signOut();
-                    },
-                    icon: Icon(
-                      Icons.settings,
-                      color: Theme.of(context).colorScheme.onPrimaryContainer,
-                    )),
+                onTap: () {
+                  Get.toNamed("/profile");
+                },
                 title: Text("Nitish Kumar"),
                 leading: ClipRRect(
                   borderRadius: BorderRadius.circular(10),
@@ -87,6 +29,65 @@ class PrimaryDrawer extends StatelessWidget {
                     width: 40,
                     height: 40,
                   ),
+                ),
+              ),
+              SizedBox(height: 5),
+              Divider(
+                color: Theme.of(context).colorScheme.onPrimaryContainer,
+              ),
+              SizedBox(height: 10),
+              SizedBox(height: 10),
+              Spacer(),
+              Divider(
+                color: Theme.of(context).colorScheme.onPrimaryContainer,
+              ),
+              ListTile(
+                onTap: () {
+                  Get.to(DemoPage());
+                },
+                leading: Icon(
+                  Icons.record_voice_over,
+                  color: Theme.of(context).colorScheme.onPrimaryContainer,
+                ),
+                title: Text(
+                  "Disclaimer",
+                  style: Theme.of(context).textTheme.labelMedium,
+                ),
+              ),
+              ListTile(
+                onTap: () {},
+                leading: Icon(
+                  Icons.privacy_tip_outlined,
+                  color: Theme.of(context).colorScheme.onPrimaryContainer,
+                ),
+                title: Text(
+                  "Privacy Policy",
+                  style: Theme.of(context).textTheme.labelMedium,
+                ),
+              ),
+              ListTile(
+                onTap: () {},
+                leading: Icon(
+                  Icons.info_outline_rounded,
+                  color: Theme.of(context).colorScheme.onPrimaryContainer,
+                ),
+                title: Text(
+                  "Terms and Conditions",
+                  style: Theme.of(context).textTheme.labelMedium,
+                ),
+              ),
+              ListTile(
+                onTap: () {
+                  authController.signOut();
+                },
+                leading: SvgPicture.asset(
+                  "Assets/Icons/exit.svg",
+                  color: Theme.of(context).colorScheme.onPrimaryContainer,
+                  width: 20,
+                ),
+                title: Text(
+                  "Logout",
+                  style: Theme.of(context).textTheme.labelMedium,
                 ),
               )
             ],

@@ -54,8 +54,9 @@ class QuestionLevelPage extends StatelessWidget {
                             children: [
                               Text(
                                 e.level.toString(),
-                                style: Theme.of(context).textTheme.bodyLarge,
+                                style: Theme.of(context).textTheme.bodySmall,
                               ),
+                              SizedBox(height: 5),
                               e.isCompeleted!
                                   ? Container(
                                       padding: EdgeInsets.symmetric(
@@ -81,7 +82,10 @@ class QuestionLevelPage extends StatelessWidget {
                                         "Pendding",
                                         style: Theme.of(context)
                                             .textTheme
-                                            .bodySmall,
+                                            .labelSmall
+                                            ?.copyWith(
+                                              color: Colors.white,
+                                            ),
                                       ),
                                     ),
                             ],

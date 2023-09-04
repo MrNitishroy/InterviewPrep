@@ -40,9 +40,7 @@ class ChatMessage extends StatelessWidget {
                 Flexible(
                   child: Text(
                     message,
-                    style: TextStyle(
-                      fontSize: 15,
-                    ),
+                    style: Theme.of(context).textTheme.bodySmall,
                   ),
                 ),
               ],

@@ -35,9 +35,7 @@ class MyButton extends StatelessWidget {
             SizedBox(width: 10),
             Text(
               text,
-              style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                    fontWeight: FontWeight.bold,
-                  ),
+              style: Theme.of(context).textTheme.bodySmall,
             ),
           ],
         ),

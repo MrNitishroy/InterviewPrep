@@ -21,7 +21,7 @@ class LoginPage extends StatelessWidget {
             children: [
               Text(
                 "Login 👍",
-                style: Theme.of(context).textTheme.headlineMedium,
+                style: Theme.of(context).textTheme.headlineSmall,
               ),
             ],
           ),
@@ -62,7 +62,7 @@ class LoginPage extends StatelessWidget {
               MyButton(
                 bgColor: Colors.blue,
                 iconPath: "Assets/Icons/google.svg",
-                text: "GOOGLE",
+                text: "Sign in with Google",
                 ontap: () {
                   authController.signInWithGoogle();
                 },
@@ -74,7 +74,7 @@ class LoginPage extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text("Forgot Password?",
-                  style: Theme.of(context).textTheme.bodyMedium)
+                  style: Theme.of(context).textTheme.labelMedium)
             ],
           ),
         ],

@@ -114,7 +114,8 @@ class InterviewPage extends StatelessWidget {
                               interviewController.userAnswer.value,
                               style: TextStyle(
                                 color: Colors.black,
-                                fontSize: 20,
+                                fontSize: 18,
+                                fontWeight: FontWeight.w500,
                               ),
                             ),
                           ),
@@ -130,7 +131,8 @@ class InterviewPage extends StatelessWidget {
                               interviewController.question.value,
                               style: TextStyle(
                                 color: Colors.black,
-                                fontSize: 20,
+                                fontSize: 18,
+                                fontWeight: FontWeight.w500,
                               ),
                             ),
                           ),

@@ -14,16 +14,19 @@ class DemoPage extends StatelessWidget {
     TextToScpeechController tts = Get.put(TextToScpeechController());
     FreeTTSController freeTTSController = Get.put(FreeTTSController());
     return Scaffold(
-      body: Center(
-        child: TextButton(
-          onPressed: () {
-            // tts.getTextToSpeech("");
-            freeTTSController.TTSConverter(
-                "Java is a high-level programming language and JVM).");
-          },
-          child: Text("Call"),
+        body: Column(
+      children: [
+        SizedBox(
+          height: 200,
         ),
-      ),
-    );
+        AnimatedContainer(
+          
+          duration: Duration(seconds: 4),
+          decoration: BoxDecoration(color: Colors.white),
+          width: 200,
+          height: 200,
+        )
+      ],
+    ));
   }
 }

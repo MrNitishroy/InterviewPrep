@@ -38,7 +38,7 @@ class InterviewCompletePage extends StatelessWidget {
                         ),
                         child: Text(
                           "HR Interview",
-                          style: Theme.of(context).textTheme.bodyMedium,
+                          style: Theme.of(context).textTheme.bodySmall,
                         ),
                       ),
                       Container(
@@ -49,7 +49,7 @@ class InterviewCompletePage extends StatelessWidget {
                         ),
                         child: Text(
                           "Level 1 - Simple Question",
-                          style: Theme.of(context).textTheme.bodyMedium,
+                          style: Theme.of(context).textTheme.bodySmall,
                         ),
                       ),
                     ],
@@ -61,15 +61,12 @@ class InterviewCompletePage extends StatelessWidget {
                       color: Theme.of(context).colorScheme.primaryContainer,
                       borderRadius: BorderRadius.circular(20),
                     ),
-                    child: const Column(
+                    child: Column(
                       children: [
                         Text(
                           "You have Attended all the questions in this level",
                           textAlign: TextAlign.center,
-                          style: TextStyle(
-                            fontSize: 25,
-                            fontWeight: FontWeight.w500,
-                          ),
+                          style: Theme.of(context).textTheme.headlineMedium,
                         ),
                         SizedBox(height: 20),
                         MyPercentageIndicator(
@@ -79,9 +76,9 @@ class InterviewCompletePage extends StatelessWidget {
                         Text(
                           "❤️ Congratulations !",
                           style: TextStyle(
-                            fontSize: 30,
+                            fontSize: 25,
                             color: Colors.green,
-                            fontWeight: FontWeight.w500,
+                            fontWeight: FontWeight.w400,
                           ),
                         ),
                       ],

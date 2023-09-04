@@ -20,7 +20,7 @@ class SignupPage extends StatelessWidget {
             children: [
               Text(
                 "Create Acount 👍",
-                style: Theme.of(context).textTheme.headlineMedium,
+                style: Theme.of(context).textTheme.headlineSmall,
               ),
             ],
           ),
@@ -67,7 +67,7 @@ class SignupPage extends StatelessWidget {
               MyButton(
                 bgColor: Colors.blue,
                 iconPath: "Assets/Icons/google.svg",
-                text: "GOOGLE",
+                text: "Signup with Google",
                 ontap: () {},
               ),
             ],

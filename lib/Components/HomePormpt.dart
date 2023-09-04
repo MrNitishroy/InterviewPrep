@@ -17,7 +17,7 @@ class HomePrompts extends StatelessWidget {
         chatController.sendPrompt(prompt);
       },
       child: Container(
-        width: context.width * 0.4,
+        width: 180,
         height: 50,
         padding: EdgeInsets.all(10),
         decoration: BoxDecoration(
@@ -33,7 +33,7 @@ class HomePrompts extends StatelessWidget {
           children: [
             Text(
               title,
-              style: Theme.of(context).textTheme.bodyMedium,
+              style: Theme.of(context).textTheme.bodySmall,
             ),
           ],
         ),
