@@ -26,11 +26,15 @@ class AuthController extends GetxController {
   }
 
   void getFirstName() {
-    if (user != null) {
-      var name = user!.displayName;
-      List<String> arrName = name!.split(' ');
-      firstName.value = arrName.isNotEmpty ? arrName[0] : "User";
-      print(firstName);
+    try {
+      if (user != null) {
+        var name = user!.displayName;
+        List<String> arrName = name!.split(' ');
+        firstName.value = arrName.isNotEmpty ? arrName[0] : "Root";
+        print(firstName);
+      }
+    } catch (e) {
+      print(e);
     }
   }
 
@@ -51,7 +55,7 @@ class AuthController extends GetxController {
           fontSize: 15.0,
         );
 
-        Get.offAllNamed("/ChatPage");
+        Get.offAllNamed("/homepage");
       } on FirebaseAuthException catch (e) {
         if (e.code == 'user-not-found') {
           Fluttertoast.showToast(
@@ -106,7 +110,7 @@ class AuthController extends GetxController {
             textColor: Colors.white,
             fontSize: 15.0,
           );
-          Get.offAllNamed("/ChatPage");
+          Get.offAllNamed("/homepage");
         },
       ).catchError(
         (e) {
@@ -178,25 +182,25 @@ class AuthController extends GetxController {
   }
 
   void signInWithGoogle() async {
-    try {
-      final GoogleSignInAccount? googleSignInAccount =
-          await GoogleSignIn().signIn();
+    final GoogleSignInAccount? googleSignInAccount =
+        await GoogleSignIn().signInSilently();
 
-      if (googleSignInAccount != null) {
-        final GoogleSignInAuthentication googleSignInAuthentication =
-            await googleSignInAccount.authentication;
+    if (googleSignInAccount != null) {
+      final GoogleSignInAuthentication googleSignInAuthentication =
+          await googleSignInAccount.authentication;
 
-        final AuthCredential authCredential = GoogleAuthProvider.credential(
-          idToken: googleSignInAuthentication.idToken,
-          accessToken: googleSignInAuthentication.accessToken,
-        );
+      final AuthCredential authCredential = await GoogleAuthProvider.credential(
+        idToken: googleSignInAuthentication.idToken,
+        accessToken: googleSignInAuthentication.accessToken,
+      );
 
-        final UserCredential userCredential =
-            await firebaseAuth.signInWithCredential(authCredential);
-        Get.offAllNamed("/permission");
-      } else {}
-    } catch (error) {
-      print("An error occurred: $error");
-    }
+      final UserCredential userCredential =
+          await firebaseAuth.signInWithCredential(authCredential).catchError(
+        (onError) {
+          print("Print Error");
+        },
+      );
+      Get.offAllNamed("/permission");
+    } else {}
   }
 }

@@ -1,3 +1,4 @@
+import 'package:chatgpt/Controller/AuthController.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -8,6 +9,7 @@ class HeaderUserInfo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    AuthController authController = Get.put(AuthController());
     return Row(
       children: [
         InkWell(
@@ -39,7 +41,7 @@ class HeaderUserInfo extends StatelessWidget {
                   ),
                   SizedBox(height: 4),
                   Text(
-                    "Nitish kumar",
+                    authController.firstName.value,
                     style: Theme.of(context).textTheme.headlineMedium,
                   ),
                 ],

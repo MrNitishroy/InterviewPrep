@@ -73,8 +73,10 @@ class LoginPage extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text("Forgot Password?",
-                  style: Theme.of(context).textTheme.labelMedium)
+              Text(
+                "Forgot Password?",
+                style: Theme.of(context).textTheme.labelMedium,
+              )
             ],
           ),
         ],
