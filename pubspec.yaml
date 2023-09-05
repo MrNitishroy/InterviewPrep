@@ -56,6 +56,7 @@ dependencies:
   confetti: ^0.7.0
   percent_indicator: ^4.2.3
   flutter_heatmap_calendar: ^1.0.5
+  avatar_glow: ^2.0.2
 dev_dependencies:
   flutter_test:
     sdk: flutter

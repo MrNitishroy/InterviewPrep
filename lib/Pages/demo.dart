@@ -20,7 +20,6 @@ class DemoPage extends StatelessWidget {
           height: 200,
         ),
         AnimatedContainer(
-          
           duration: Duration(seconds: 4),
           decoration: BoxDecoration(color: Colors.white),
           width: 200,

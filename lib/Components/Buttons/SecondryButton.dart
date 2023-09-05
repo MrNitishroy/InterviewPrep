@@ -17,7 +17,10 @@ class SecondryButton extends StatelessWidget {
           color: Theme.of(context).colorScheme.primaryContainer,
           borderRadius: BorderRadius.circular(10),
         ),
-        child: Text(btnName),
+        child: Text(
+          btnName,
+          style: Theme.of(context).textTheme.bodyMedium,
+        ),
       ),
     );
   }

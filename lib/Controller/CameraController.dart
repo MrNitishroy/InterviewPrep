@@ -14,7 +14,6 @@ class ICameraController extends GetxController {
 
   @override
   void dispose() {
-    // TODO: implement dispose
     super.dispose();
     cameraController.dispose();
   }
@@ -43,5 +42,9 @@ class ICameraController extends GetxController {
           },
         );
     update();
+  }
+
+  void cameraOff() {
+    cameraController.dispose();
   }
 }

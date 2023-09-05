@@ -1,13 +1,10 @@
 import 'package:chatgpt/Components/BackButton.dart';
-import 'package:chatgpt/Components/MyButton.dart';
 import 'package:chatgpt/Controller/CameraController.dart';
 import 'package:chatgpt/Controller/InterviewController.dart';
-import 'package:chatgpt/Pages/InterviewPage/Interview.dart';
-import 'package:flutter/cupertino.dart';
+import 'package:chatgpt/Pages/InterviewPage/InterviewPage2.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
-
 import '../../Model/QuestionModel.dart';
 
 class InterviewTips extends StatelessWidget {
@@ -17,7 +14,8 @@ class InterviewTips extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     InterviewController interviewController = Get.put(InterviewController());
-    ICameraController iCameraController = Get.put(ICameraController());
+    ICameraController cameraController =
+        Get.put(ICameraController()); // dont remove this line
     interviewController.questionLevel = e;
     return Scaffold(
         body: Padding(
@@ -121,7 +119,9 @@ class InterviewTips extends StatelessWidget {
           Spacer(),
           InkWell(
             onTap: () {
-              Get.to(InterviewPage(e: e));
+              interviewController.getOneQuestion();
+              // Get.to(InterviewPage(e: e));
+              Get.to(InterviewPage2());
             },
             child: Container(
               padding: EdgeInsets.symmetric(vertical: 10, horizontal: 40),

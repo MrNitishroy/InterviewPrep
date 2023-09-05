@@ -1,58 +1,63 @@
 import 'package:chatgpt/Controller/FreeTTS.dart';
 import 'package:chatgpt/Controller/IVoiceToText.dart';
+import 'package:chatgpt/Controller/Result/ResultController.dart';
 import 'package:chatgpt/Model/QuestionModel.dart';
-import 'package:chatgpt/Pages/InterviewPage/InterviewComplete.dart';
-import 'package:flutter/cupertino.dart';
+import 'package:chatgpt/Pages/AnswerSummery/AnswerSummery.dart';
+
 import 'package:get/get.dart';
 import 'package:speech_to_text/speech_to_text.dart';
 
 class InterviewController extends GetxController {
   FreeTTSController freeTTSController = Get.put(FreeTTSController());
+  ResultController resultController = Get.put(ResultController());
   IVoiceToText iVoiceToText = Get.put(IVoiceToText());
   late QuestionLevel questionLevel;
   SpeechToText speechToText = SpeechToText();
   RxString userAnswer = "".obs;
   RxString question = "".obs;
   RxBool isSpeeking = false.obs;
+  RxInt totalQuestion = 0.obs;
   RxInt count = 0.obs;
   RxInt index = 0.obs;
+
+  RxBool questionLoading = false.obs;
   @override
   void onInit() {
     super.onInit();
-    getFirstTimeQuestion();
     speechToText = SpeechToText();
   }
 
-  void getFirstTimeQuestion() {
-    Future.delayed(Duration(seconds: 2), () {
-      getOneQuestion();
-    });
-  }
-
-  void getOneQuestion() {
+  void getOneQuestion() async {
+    questionLoading.value = true;
     List<ListOfQuestion>? listOfQuestion = questionLevel.listOfQuestion;
-    if (index.value == listOfQuestion!.length || count.value == 10) {
-      Get.to(InterviewCompletePage());
+    totalQuestion.value = listOfQuestion!.length;
+    if (index.value == totalQuestion.value || count.value == 10) {
+      // Get.to(InterviewCompletePage());
+      Get.to(AnswerSummery());
       return;
     }
-    print("All Question");
-    question.value = listOfQuestion![index.value].question!;
+    question.value = listOfQuestion[index.value].question!;
     freeTTSController.TTSConverter(question.value);
-    print(question);
+    print("Get new question =  $question");
     index.value += 1;
     count.value += 1;
+    questionLoading.value = false;
   }
 
   void giveAnswer() {
-    isSpeeking.value = true;
-    startListning();
+    if (questionLoading.value == true) {
+    } else {
+      isSpeeking.value = true;
+      startListning();
+    }
   }
 
   void stopAndwering() {
     isSpeeking.value = false;
+    resultController.setUserAnswer(userAnswer.value, question.value);
+    userAnswer.value = "";
     getOneQuestion();
     speechToText.stop();
-    userAnswer.value = "";
   }
 
   void startListning() async {
