@@ -6,7 +6,8 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 class ResultController extends GetxController {
   RxList<ListOfQuestion> userResponse = <ListOfQuestion>[].obs;
-
+  RxInt totalAnswerd = 0.obs;
+  RxInt totalQuestion = 0.obs;
   @override
   void onInit() {
     // TODO: implement onInit
@@ -22,15 +23,22 @@ class ResultController extends GetxController {
   }
 
   void setUserAnswer(String userAnswer, String question) {
-    var newResponse = ListOfQuestion(
-      question: question,
-      userAnswer: userAnswer,
-    );
-    userResponse.add(newResponse);
-    saveInLocalStoreage();
-    print("Adding Response to db");
-    print("Question: $question");
-    print("User Response: $userAnswer");
+    if (userAnswer == "" ||
+        userAnswer.contains("i don't know") ||
+        userAnswer.contains("i don't have knowledge")) {
+      return;
+    } else {
+      totalAnswerd.value += 1;
+      var newResponse = ListOfQuestion(
+        question: question,
+        userAnswer: userAnswer,
+      );
+      userResponse.add(newResponse);
+      saveInLocalStoreage();
+      print("Adding Response to db");
+      print("Question: $question");
+      print("User Response: $userAnswer");
+    }
   }
 
 // save all data in local storage
