@@ -1,3 +1,4 @@
+import 'package:chatgpt/Components/BackButton.dart';
 import 'package:chatgpt/Components/Home/PercentageIndicator.dart';
 import 'package:chatgpt/Config/Colors.dart';
 import 'package:chatgpt/Pages/Profile/HeatMap.dart';
@@ -22,25 +23,7 @@ class ProfilePage extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  InkWell(
-                    onTap: () {
-                      Get.back();
-                    },
-                    child: Container(
-                      width: 40,
-                      height: 40,
-                      padding: const EdgeInsets.all(10),
-                      decoration: BoxDecoration(
-                        color: Theme.of(context).colorScheme.primaryContainer,
-                        borderRadius: BorderRadius.circular(10),
-                      ),
-                      child: SvgPicture.asset(
-                        "Assets/Icons/arrow.svg",
-                        width: 30,
-                        height: 30,
-                      ),
-                    ),
-                  ),
+                  MyBackButton(),
                   Text(
                     "Profile",
                     style: Theme.of(context).textTheme.bodyMedium,
@@ -52,7 +35,10 @@ class ProfilePage extends StatelessWidget {
                       height: 40,
                       padding: const EdgeInsets.all(10),
                       decoration: BoxDecoration(
-                        color: Theme.of(context).colorScheme.primaryContainer,
+                        color: Theme.of(context)
+                            .colorScheme
+                            .onBackground
+                            .withOpacity(0.2),
                         borderRadius: BorderRadius.circular(10),
                       ),
                       child: SvgPicture.asset(

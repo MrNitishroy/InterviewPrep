@@ -1,4 +1,5 @@
 import 'package:chatgpt/Components/BackButton.dart';
+import 'package:chatgpt/Config/Colors.dart';
 import 'package:chatgpt/Controller/CameraController.dart';
 import 'package:chatgpt/Controller/InterviewController.dart';
 import 'package:chatgpt/Pages/InterviewPage/InterviewPage2.dart';
@@ -131,9 +132,10 @@ class InterviewTips extends StatelessWidget {
               ),
               child: Text(
                 "I AM READY",
-                style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                      fontWeight: FontWeight.bold,
-                    ),
+                style: Theme.of(context)
+                    .textTheme
+                    .bodySmall
+                    ?.copyWith(fontWeight: FontWeight.bold, color: whiteColor),
               ),
             ),
           )

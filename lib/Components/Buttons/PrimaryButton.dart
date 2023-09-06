@@ -1,3 +1,4 @@
+import 'package:chatgpt/Config/Colors.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -19,7 +20,10 @@ class PrimaryButton extends StatelessWidget {
         ),
         child: Text(
           btnName,
-          style: Theme.of(context).textTheme.bodyMedium,
+          style: Theme.of(context)
+              .textTheme
+              .bodyMedium
+              ?.copyWith(color: whiteColor),
         ),
       ),
     );

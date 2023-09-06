@@ -1,6 +1,7 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:avatar_glow/avatar_glow.dart';
 import 'package:camera/camera.dart';
+import 'package:chatgpt/Config/Colors.dart';
 import 'package:chatgpt/Controller/CameraController.dart';
 import 'package:chatgpt/Controller/Interview/InterviewController2.dart';
 import 'package:chatgpt/Controller/InterviewController.dart';
@@ -164,6 +165,7 @@ class InterviewPage2 extends StatelessWidget {
                                   icon: Icon(
                                     Icons.stop,
                                     size: 30,
+                                    color: whiteColor,
                                   ),
                                 ),
                               ),
@@ -194,6 +196,7 @@ class InterviewPage2 extends StatelessWidget {
                                   icon: Icon(
                                     Icons.mic,
                                     size: 30,
+                                    color: whiteColor,
                                   ),
                                 ),
                               ),

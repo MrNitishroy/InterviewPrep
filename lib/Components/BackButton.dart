@@ -17,7 +17,7 @@ class MyBackButton extends StatelessWidget {
         height: 40,
         padding: EdgeInsets.all(10),
         decoration: BoxDecoration(
-          color: Theme.of(context).colorScheme.primaryContainer,
+          color: Theme.of(context).colorScheme.onBackground.withOpacity(0.2),
           border: Border.all(
             color: Theme.of(context).colorScheme.outline,
           ),
