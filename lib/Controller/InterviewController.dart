@@ -27,12 +27,20 @@ class InterviewController extends GetxController {
     speechToText = SpeechToText();
   }
 
+  @override
+  void onClose() {
+    // TODO: implement onClose
+    super.onClose();
+    resultController.dispose();
+  }
+
   void getOneQuestion() async {
     questionLoading.value = true;
     List<ListOfQuestion>? listOfQuestion = questionLevel.listOfQuestion;
     totalQuestion.value = listOfQuestion!.length;
     if (index.value == totalQuestion.value || count.value == 10) {
       // Get.to(InterviewCompletePage());
+      resultController.saveInLocalStoreage();
       Get.to(AnswerSummery());
       return;
     }

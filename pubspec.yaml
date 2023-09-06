@@ -58,6 +58,7 @@ dependencies:
   flutter_heatmap_calendar: ^1.0.5
   avatar_glow: ^2.0.2
   animated_text_kit: ^4.2.2
+  shared_preferences: ^2.2.1
 dev_dependencies:
   flutter_test:
     sdk: flutter

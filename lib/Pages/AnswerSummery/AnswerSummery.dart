@@ -20,55 +20,60 @@ class AnswerSummery extends StatelessWidget {
     return Scaffold(
       body: Padding(
         padding: const EdgeInsets.all(10),
-        child: Column(
-          children: [
-            SizedBox(height: 100),
-            OverView(
-              totalQuestion: 10,
-              answeredQuestion: 7,
-            ),
-            SizedBox(height: 20),
-            Row(
-              children: [
-                Text(
-                  "Your answers",
-                  style: Theme.of(context).textTheme.labelMedium,
-                ),
-              ],
-            ),
-            SizedBox(height: 10),
-            Obx(
-              () => Column(
-                children: resultController.userResponse.value
-                    .map(
-                      (e) => QuestionTile(
-                        question: e.question!,
-                        answer: e.userAnswer!,
-                      ),
-                    )
-                    .toList(),
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              SizedBox(height: 100),
+              OverView(
+                totalQuestion: 10,
+                answeredQuestion: 7,
               ),
-            ),
-            SizedBox(height: 20),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                SecondryButton(
-                  btnName: "try Again",
-                  onPressed: () {
-                    Get.offAll(HomeData());
-                  },
+              SizedBox(height: 20),
+              Row(
+                children: [
+                  Text(
+                    "Your answers",
+                    style: Theme.of(context).textTheme.labelMedium,
+                  ),
+                ],
+              ),
+              SizedBox(height: 10),
+              Obx(
+                () => Column(
+                  children: resultController.userResponse.value
+                      .map(
+                        (e) => QuestionTile(
+                          question: e.question!,
+                          answer: e.userAnswer!,
+                        ),
+                      )
+                      .toList(),
                 ),
-                SizedBox(width: 0),
-                PrimaryButton(
-                  btnName: "Submit Answer",
-                  onPressed: () {
-                    Get.to(InterviewCompletePage());
-                  },
-                ),
-              ],
-            ),
-          ],
+              ),
+              SizedBox(height: 20),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  SecondryButton(
+                    btnName: "try Again",
+                    onPressed: () {
+                      resultController.clearStorage();
+                      Get.offAll(HomeData());
+                    },
+                  ),
+                  SizedBox(width: 0),
+                  PrimaryButton(
+                    btnName: "Submit Answer",
+                    onPressed: () {
+                      // resultController.printUserResponse();
+                      resultController.loadUserResponses();
+                      // Get.to(InterviewCompletePage());
+                    },
+                  ),
+                ],
+              ),
+            ],
+          ),
         ),
       ),
     );
