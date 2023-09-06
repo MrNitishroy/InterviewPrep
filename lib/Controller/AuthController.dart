@@ -55,7 +55,7 @@ class AuthController extends GetxController {
           fontSize: 15.0,
         );
 
-        Get.offAllNamed("/homepage");
+        Get.offAllNamed("/homePage");
       } on FirebaseAuthException catch (e) {
         if (e.code == 'user-not-found') {
           Fluttertoast.showToast(
@@ -125,44 +125,6 @@ class AuthController extends GetxController {
           );
         },
       );
-    } else {
-      Fluttertoast.showToast(
-        msg: "Please fill all the fields",
-        toastLength: Toast.LENGTH_SHORT,
-        gravity: ToastGravity.BOTTOM,
-        timeInSecForIosWeb: 1,
-        backgroundColor: Colors.red,
-        textColor: Colors.white,
-        fontSize: 15.0,
-      );
-    }
-  }
-
-  void login() {
-    if (loginEmail.text.isNotEmpty && loginPwd.text.isNotEmpty) {
-      if (loginEmail.text == "root" && loginPwd.text == "root") {
-        Fluttertoast.showToast(
-          msg: "Login Successfull",
-          toastLength: Toast.LENGTH_SHORT,
-          gravity: ToastGravity.BOTTOM,
-          timeInSecForIosWeb: 1,
-          backgroundColor: Colors.green,
-          textColor: Colors.white,
-          fontSize: 15.0,
-        );
-        isLoggedIn.value = true;
-        Get.offAll(ChatPage());
-      } else {
-        Fluttertoast.showToast(
-          msg: "Invalid Credentials",
-          toastLength: Toast.LENGTH_SHORT,
-          gravity: ToastGravity.BOTTOM,
-          timeInSecForIosWeb: 1,
-          backgroundColor: Colors.red,
-          textColor: Colors.white,
-          fontSize: 15.0,
-        );
-      }
     } else {
       Fluttertoast.showToast(
         msg: "Please fill all the fields",

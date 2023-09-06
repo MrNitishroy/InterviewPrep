@@ -18,17 +18,11 @@ class HeaderUserInfo extends StatelessWidget {
           },
           child: Row(
             children: [
-              Container(
-                padding: EdgeInsets.all(8),
-                decoration: BoxDecoration(
-                  color: Theme.of(context).colorScheme.primaryContainer,
-                  borderRadius: BorderRadius.circular(10),
-                ),
-                width: 60,
-                height: 60,
-                child: ClipRRect(
-                  borderRadius: BorderRadius.circular(100),
-                  child: Image.asset("Assets/Image/profile2.png"),
+              ClipRRect(
+                borderRadius: BorderRadius.circular(10),
+                child: Image.asset(
+                  "Assets/Image/profile2.png",
+                  width: 50,
                 ),
               ),
               SizedBox(width: 10),

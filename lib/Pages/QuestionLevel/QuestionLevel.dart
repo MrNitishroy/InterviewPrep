@@ -1,3 +1,4 @@
+import 'package:chatgpt/Config/Private.dart';
 import 'package:chatgpt/Model/QuestionModel.dart';
 import 'package:chatgpt/Pages/InterviewPage/InterivewTips.dart';
 import 'package:chatgpt/Pages/InterviewPage/Interview.dart';
@@ -29,11 +30,9 @@ class QuestionLevelPage extends StatelessWidget {
                       margin: EdgeInsets.all(10),
                       padding: EdgeInsets.all(10),
                       decoration: BoxDecoration(
-                          color: Theme.of(context).colorScheme.primaryContainer,
-                          borderRadius: BorderRadius.circular(10),
-                          border: Border.all(
-                            color: Theme.of(context).colorScheme.outline,
-                          )),
+                        color: Theme.of(context).colorScheme.primaryContainer,
+                        borderRadius: BorderRadius.circular(10),
+                      ),
                       child: Row(
                         children: [
                           e.isCompeleted!

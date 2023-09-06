@@ -1,4 +1,5 @@
 import 'package:chatgpt/Components/Home/PercentageIndicator.dart';
+import 'package:chatgpt/Config/Private.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';

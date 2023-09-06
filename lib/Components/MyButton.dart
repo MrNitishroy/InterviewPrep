@@ -30,13 +30,13 @@ class MyButton extends StatelessWidget {
             SvgPicture.asset(
               iconPath,
               width: 20,
-              color: Theme.of(context).colorScheme.onBackground,
+              color: Theme.of(context).colorScheme.secondary,
             ),
             SizedBox(width: 10),
-            Text(
-              text,
-              style: Theme.of(context).textTheme.bodySmall,
-            ),
+            Text(text,
+                style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                      color: Theme.of(context).colorScheme.secondary,
+                    )),
           ],
         ),
       ),

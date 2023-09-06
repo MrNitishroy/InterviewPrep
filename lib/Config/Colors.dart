@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
-const lDivColor = Color(0xffF5F6FA);
-const lBgColor = Color(0xffFFFFFF);
+const lDivColor = Color(0xffffffff);
+const lBgColor = Color(0xfff6f5fa);
 const lLableColor = Color(0xff8E8E8E);
 const lFontColor = Color(0xff000000);
 const lprimaryColor = Color(0xff0F6DFB);
-const lsecondryColor = Color(0xff0F6DFB);
+const lsecondryDivColor = Color(0xffF5F6FA);
 const lBorderColor = Color(0xffB5D2FF);
 
 // const dDivColor = Color(0xff3D3C40);
@@ -31,3 +31,4 @@ const wel3Color = Color(0xffFfdcbd);
 const greenColor = Color(0xff0CC800);
 const oragngeColor = Color(0xffEAA53E);
 const blueColor = Color(0xff0F6DFB);
+const whiteColor = Color(0xffffffff);

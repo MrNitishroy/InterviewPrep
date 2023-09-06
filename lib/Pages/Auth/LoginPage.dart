@@ -52,7 +52,7 @@ class LoginPage extends StatelessWidget {
             iconPath: "Assets/Icons/lock.svg",
             text: "I AM READY",
             ontap: () {
-              authController.login();
+              authController.loginWithEmailAndPassword();
             },
           ),
           SizedBox(height: 50),
