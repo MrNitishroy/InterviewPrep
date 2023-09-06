@@ -100,7 +100,8 @@ class AnswerSummery extends StatelessWidget {
                         : PrimaryButton(
                             btnName: "Submit Answer",
                             onPressed: () {
-                              Get.to(InterviewCompletePage());
+                              resultController.combineQandA();
+                              // Get.to(InterviewCompletePage());
                             },
                           ),
                   ],

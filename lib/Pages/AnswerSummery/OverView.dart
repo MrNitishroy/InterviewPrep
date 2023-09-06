@@ -10,7 +10,7 @@ class OverView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    double percentValue = answeredQuestion / 10;
+    double percentValue = answeredQuestion / totalQuestion;
     return Container(
       padding: EdgeInsets.all(20),
       decoration: BoxDecoration(

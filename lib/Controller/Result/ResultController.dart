@@ -1,10 +1,14 @@
 import 'dart:convert';
 
+import 'package:chatgpt/Controller/ChatGptController.dart';
 import 'package:chatgpt/Model/QuestionModel.dart';
+import 'package:chatgpt/PrivateData.dart';
 import 'package:get/get.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:http/http.dart' as http;
 
 class ResultController extends GetxController {
+  ChatGPTController chatGPTController = Get.put(ChatGPTController());
   RxList<ListOfQuestion> userResponse = <ListOfQuestion>[].obs;
   RxInt totalAnswerd = 0.obs;
   RxInt totalQuestion = 0.obs;
@@ -62,6 +66,21 @@ class ResultController extends GetxController {
         ),
       );
     }
+  }
+
+  void combineQandA() {
+    // loadUserResponses();
+    RxString cobined = "".obs;
+    for (var i = 0; i < userResponse.length; i++) {
+      cobined.value += "Q$i: ${userResponse[i].question}\n";
+      cobined.value += "A: ${userResponse[i].userAnswer}\n";
+    }
+    print(cobined.value);
+    // chatGPTController.sendQuary(cobined.value).then(
+    //   (value) {
+    //     print(value);
+    //   },
+    // );
   }
 
   void clearStorage() async {
