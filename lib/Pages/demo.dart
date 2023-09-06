@@ -12,29 +12,33 @@ class DemoPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    TextToScpeechController tts = Get.put(TextToScpeechController());
-    FreeTTSController freeTTSController = Get.put(FreeTTSController());
+    DemoController demoController = Get.put(DemoController());
     return Scaffold(
       body: Column(
         children: [
           SizedBox(
-            height: 200,
+            height: 100,
           ),
-          AnimatedTextKit(
-            animatedTexts: [
-              TypewriterAnimatedText(
-                'Hello my name is nitish kumar ',
-                textStyle: const TextStyle(
-                  fontSize: 32.0,
-                  fontWeight: FontWeight.bold,
-                ),
-                speed: const Duration(milliseconds: 10),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              ElevatedButton.icon(
+                label: Text("Call api"),
+                icon: Icon(Icons.api),
+                onPressed: () {
+                  demoController.getResult();
+                },
               ),
             ],
-            totalRepeatCount: 100,
-            pause: const Duration(milliseconds: 1000),
-            displayFullTextOnTap: true,
-            stopPauseOnTap: true,
+          ),
+          SizedBox(
+            height: 20,
+          ),
+          Obx(
+            () => Text(
+              "Response : ${demoController.response.value}",
+              style: Theme.of(context).textTheme.bodySmall,
+            ),
           ),
         ],
       ),

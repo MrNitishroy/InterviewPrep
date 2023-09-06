@@ -1,1 +1,1 @@
-const String OPENAIKEY = "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";
+const String OPENAIKEY = "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";

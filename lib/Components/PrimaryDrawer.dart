@@ -1,3 +1,4 @@
+import 'package:chat_gpt_api/app/chat_gpt.dart';
 import 'package:chatgpt/Controller/AuthController.dart';
 import 'package:chatgpt/Pages/demo.dart';
 import 'package:flutter/cupertino.dart';
@@ -36,6 +37,19 @@ class PrimaryDrawer extends StatelessWidget {
                 color: Theme.of(context).colorScheme.onPrimaryContainer,
               ),
               SizedBox(height: 10),
+              ListTile(
+                onTap: () {
+                  Get.toNamed("/ChatPage");
+                },
+                leading: Icon(
+                  Icons.chat_bubble_outline_rounded,
+                  color: Theme.of(context).colorScheme.onPrimaryContainer,
+                ),
+                title: Text(
+                  "Chat GPT",
+                  style: Theme.of(context).textTheme.labelMedium,
+                ),
+              ),
               SizedBox(height: 10),
               Spacer(),
               Divider(
