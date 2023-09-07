@@ -52,7 +52,7 @@ class PrimaryDrawer extends StatelessWidget {
               ),
               ListTile(
                 onTap: () {
-                  // Get.toNamed("/ChatPage");
+                  Get.toNamed("/sentanceCategory");
                 },
                 leading: Icon(
                   Icons.not_interested_outlined,

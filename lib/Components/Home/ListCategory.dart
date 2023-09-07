@@ -3,7 +3,6 @@ import 'package:chatgpt/Config/Private.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-
 import '../Interview/MyPercentageIndicator.dart';
 
 class InterviewCategory extends StatelessWidget {
@@ -37,15 +36,16 @@ class InterviewCategory extends StatelessWidget {
                 Container(
                   padding: EdgeInsets.all(15),
                   decoration: BoxDecoration(
-                    color: Theme.of(context).colorScheme.background,
+                    color:
+                        Theme.of(context).colorScheme.primary.withOpacity(0.2),
                     borderRadius: BorderRadius.circular(
                       10,
                     ),
                   ),
                   child: SvgPicture.asset(
                     iconPath,
-                    width: 30,
-                    height: 30,
+                    width: 25,
+                    height: 25,
                     color: Theme.of(context).colorScheme.onBackground,
                   ),
                 ),

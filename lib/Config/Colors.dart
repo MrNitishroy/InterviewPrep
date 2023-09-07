@@ -32,3 +32,4 @@ const greenColor = Color(0xff0CC800);
 const oragngeColor = Color(0xffEAA53E);
 const blueColor = Color(0xff0F6DFB);
 const whiteColor = Color(0xffffffff);
+const redColor = Color(0xffFE2B2B);
