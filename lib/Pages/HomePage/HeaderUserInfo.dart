@@ -35,7 +35,7 @@ class HeaderUserInfo extends StatelessWidget {
                   ),
                   SizedBox(height: 4),
                   Text(
-                    authController.firstName.value,
+                    authController.user!.displayName!,
                     style: Theme.of(context).textTheme.headlineMedium,
                   ),
                 ],

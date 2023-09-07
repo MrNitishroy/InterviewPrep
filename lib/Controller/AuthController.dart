@@ -14,7 +14,7 @@ class AuthController extends GetxController {
   TextEditingController SignupEmail = TextEditingController();
   TextEditingController SignupName = TextEditingController();
   TextEditingController SignupPwd = TextEditingController();
-
+  RxBool isLoading = false.obs;
   final firebaseAuth = FirebaseAuth.instance;
   User? user;
   RxString firstName = "Groot".obs;
@@ -140,10 +140,11 @@ class AuthController extends GetxController {
 
   void signOut() {
     firebaseAuth.signOut();
-    Get.offAllNamed("/authPage");
+    Get.offAllNamed("/googleLogin");
   }
 
   void signInWithGoogle() async {
+    isLoading.value = true;
     final GoogleSignInAccount? googleSignInAccount =
         await GoogleSignIn().signInSilently();
 
@@ -164,5 +165,6 @@ class AuthController extends GetxController {
       );
       Get.offAllNamed("/permission");
     } else {}
+    isLoading.value = false;
   }
 }

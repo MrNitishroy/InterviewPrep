@@ -7,9 +7,7 @@ class LikeAndDislikeButton extends StatelessWidget {
   final VoidCallback likePress;
   final VoidCallback dislikePress;
   const LikeAndDislikeButton(
-      {super.key,
-      required this.likePress,
-      required this.dislikePress});
+      {super.key, required this.likePress, required this.dislikePress});
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +17,7 @@ class LikeAndDislikeButton extends StatelessWidget {
         InkWell(
           onTap: dislikePress,
           child: Container(
-            padding: EdgeInsets.all(25),
+            padding: EdgeInsets.all(20),
             decoration: BoxDecoration(
               color: redColor,
               borderRadius: BorderRadius.circular(100),
@@ -30,7 +28,7 @@ class LikeAndDislikeButton extends StatelessWidget {
         InkWell(
           onTap: likePress,
           child: Container(
-            padding: EdgeInsets.all(25),
+            padding: EdgeInsets.all(20),
             decoration: BoxDecoration(
               color: greenColor,
               borderRadius: BorderRadius.circular(100),

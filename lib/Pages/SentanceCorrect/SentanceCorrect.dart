@@ -103,9 +103,9 @@ class SentanceCorrect extends StatelessWidget {
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.all(10),
-          child: Column(
+          child: ListView(
             children: [
-              SizedBox(height: 30),
+              SizedBox(height: 10),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
@@ -118,18 +118,20 @@ class SentanceCorrect extends StatelessWidget {
                 ],
               ),
               SizedBox(height: 5),
-              Slider(
-                activeColor: Theme.of(context).colorScheme.primary,
-                inactiveColor: Theme.of(context).colorScheme.primaryContainer,
-                divisions: 10,
-                value: 30,
-                onChanged: (Value) {},
-                max: 100,
-                min: 0,
+              Obx(
+                () => Slider(
+                  activeColor: Theme.of(context).colorScheme.primary,
+                  inactiveColor: Theme.of(context).colorScheme.primaryContainer,
+                  divisions: 10,
+                  value: sentanceController.index.value.toDouble(),
+                  onChanged: (Value) {},
+                  max: 10,
+                  min: 0,
+                ),
               ),
               SizedBox(height: 10),
               Container(
-                height: 400,
+                height: 350,
                 child: Expanded(
                   child: SwipeCards(
                     fillSpace: true,

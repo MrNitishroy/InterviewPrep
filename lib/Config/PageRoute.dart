@@ -1,4 +1,5 @@
 import 'package:chatgpt/Pages/Auth/AuthPage.dart';
+import 'package:chatgpt/Pages/Auth/GoogleLogin.dart';
 import 'package:chatgpt/Pages/ChatGpt.dart';
 import 'package:chatgpt/Pages/HomePage/Homepage.dart';
 import 'package:chatgpt/Pages/Permission/PermissionRequest.dart';
@@ -20,6 +21,10 @@ var allPages = [
   GetPage(
     name: "/authPage",
     page: () => AuthPage(),
+  ),
+  GetPage(
+    name: "/googleLogin",
+    page: () => GoogleLogin(),
   ),
   GetPage(
     name: "/welcome",
