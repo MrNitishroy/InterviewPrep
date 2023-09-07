@@ -26,7 +26,8 @@ class DemoPage extends StatelessWidget {
                 label: Text("Call api"),
                 icon: Icon(Icons.api),
                 onPressed: () {
-                  demoController.getResult();
+                  // demoController.getResult();
+                  demoController.checkInternet();
                 },
               ),
             ],

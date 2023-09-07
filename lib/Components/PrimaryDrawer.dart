@@ -50,6 +50,32 @@ class PrimaryDrawer extends StatelessWidget {
                   style: Theme.of(context).textTheme.labelMedium,
                 ),
               ),
+              ListTile(
+                onTap: () {
+                  // Get.toNamed("/ChatPage");
+                },
+                leading: Icon(
+                  Icons.not_interested_outlined,
+                  color: Theme.of(context).colorScheme.onPrimaryContainer,
+                ),
+                title: Text(
+                  "Correct or not",
+                  style: Theme.of(context).textTheme.labelMedium,
+                ),
+              ),
+              ListTile(
+                onTap: () {
+                  // Get.toNamed("/ChatPage");
+                },
+                leading: Icon(
+                  Icons.check_box_outline_blank_sharp,
+                  color: Theme.of(context).colorScheme.onPrimaryContainer,
+                ),
+                title: Text(
+                  "Muti Choise",
+                  style: Theme.of(context).textTheme.labelMedium,
+                ),
+              ),
               SizedBox(height: 10),
               Spacer(),
               Divider(

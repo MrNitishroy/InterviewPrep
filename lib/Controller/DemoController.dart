@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:chatgpt/Controller/ChatGptController.dart';
+import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:get/get.dart';
 import 'package:http/http.dart' as http;
 
@@ -35,5 +36,29 @@ Answer : First of all thank you for your concern, yes I have a question for you.
             response.value = value,
           },
         );
+  }
+
+  void checkInternet() async {
+    final connectivityResult = await (Connectivity().checkConnectivity());
+    if (connectivityResult == ConnectivityResult.mobile) {
+      print("Connected with mobile");
+    } else if (connectivityResult == ConnectivityResult.wifi) {
+      print("Connected with Wifi");
+    } else if (connectivityResult == ConnectivityResult.ethernet) {
+      print("Connected with Ethernet");
+    } else if (connectivityResult == ConnectivityResult.vpn) {
+      // I am connected to a vpn network.
+      // Note for iOS and macOS:
+      print("Connected with VPN");
+      // There is no separate network interface type for [vpn].
+      // It returns [other] on any device (also simulator)
+    } else if (connectivityResult == ConnectivityResult.bluetooth) {
+      
+      // I am connected to a bluetooth.
+    } else if (connectivityResult == ConnectivityResult.other) {
+      // I am connected to a network which is not in the above mentioned networks.
+    } else if (connectivityResult == ConnectivityResult.none) {
+      // I am not connected to any network.
+    }
   }
 }
