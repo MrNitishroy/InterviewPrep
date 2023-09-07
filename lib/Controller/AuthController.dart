@@ -1,4 +1,7 @@
+import 'package:chatgpt/Controller/Database/UserDataController.dart';
+import 'package:chatgpt/Model/UserModel.dart';
 import 'package:chatgpt/Pages/ChatGpt.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
@@ -16,6 +19,7 @@ class AuthController extends GetxController {
   TextEditingController SignupPwd = TextEditingController();
   RxBool isLoading = false.obs;
   final firebaseAuth = FirebaseAuth.instance;
+  final db = FirebaseFirestore.instance;
   User? user;
   RxString firstName = "Groot".obs;
   @override

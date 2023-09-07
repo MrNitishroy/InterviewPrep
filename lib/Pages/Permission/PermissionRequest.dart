@@ -6,12 +6,15 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:lottie/lottie.dart';
 
+import '../../Controller/Database/UserDataController.dart';
+
 class PermissionRequest extends StatelessWidget {
   const PermissionRequest({super.key});
 
   @override
   Widget build(BuildContext context) {
     PermissionController permissionController = Get.put(PermissionController());
+    // UserDataController userDataController = Get.put(UserDataController());
     return Scaffold(
       body: Padding(
         padding: const EdgeInsets.all(20),
