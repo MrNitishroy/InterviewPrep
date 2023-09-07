@@ -21,19 +21,21 @@ class GoogleLogin extends StatelessWidget {
               children: [
                 Column(
                   children: [
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        themeController.isDark.value
-                            ? Image.asset(
-                                "Assets/Icons/AppIcons/darklogo.png",
-                                width: 150,
-                              )
-                            : Image.asset(
-                                "Assets/Icons/AppIcons/lightLogo.png",
-                                width: 150,
-                              ),
-                      ],
+                    Obx(
+                      () => Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          themeController.isDark.value
+                              ? Image.asset(
+                                  "Assets/Icons/AppIcons/darklogo.png",
+                                  width: 150,
+                                )
+                              : Image.asset(
+                                  "Assets/Icons/AppIcons/lightLogo.png",
+                                  width: 150,
+                                ),
+                        ],
+                      ),
                     ),
                     SizedBox(height: 20),
                     Row(
@@ -71,30 +73,29 @@ class GoogleLogin extends StatelessWidget {
                                 authController.signInWithGoogle();
                               },
                               child: Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    Container(
-                                        padding: EdgeInsets.all(7),
-                                        decoration: BoxDecoration(
-                                          color: whiteColor,
-                                          borderRadius:
-                                              BorderRadius.circular(100),
-                                        ),
-                                        child: Image.asset(
-                                          "Assets/Icons/google.png",
-                                          width: 30,
-                                        )),
-                                    Text(
-                                      "Login With Google",
-                                      style: Theme.of(context)
-                                          .textTheme
-                                          .headlineSmall,
-                                    ),
-                                    SizedBox(
-                                      width: 1,
-                                    )
-                                  ]),
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Container(
+                                      padding: EdgeInsets.all(7),
+                                      decoration: BoxDecoration(
+                                        color: whiteColor,
+                                        borderRadius:
+                                            BorderRadius.circular(100),
+                                      ),
+                                      child: Image.asset(
+                                        "Assets/Icons/google.png",
+                                        width: 30,
+                                      )),
+                                  Text(
+                                    "Login With Google",
+                                    style: Theme.of(context)
+                                        .textTheme
+                                        .headlineSmall,
+                                  ),
+                                  SizedBox(width: 1)
+                                ],
+                              ),
                             ),
                     ))
               ]),

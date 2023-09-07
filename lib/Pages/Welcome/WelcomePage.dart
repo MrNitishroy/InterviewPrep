@@ -150,7 +150,10 @@ class WelcomePage extends StatelessWidget {
                         ),
                         child: Text(
                           "START",
-                          style: Theme.of(context).textTheme.bodyMedium,
+                          style: Theme.of(context)
+                              .textTheme
+                              .bodyMedium
+                              ?.copyWith(color: Colors.white),
                         ),
                       ),
                     ),
