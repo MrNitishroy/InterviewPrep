@@ -1,6 +1,3 @@
-import 'package:chatgpt/Controller/Database/UserDataController.dart';
-import 'package:chatgpt/Model/UserModel.dart';
-import 'package:chatgpt/Pages/ChatGpt.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -114,7 +111,7 @@ class AuthController extends GetxController {
             textColor: Colors.white,
             fontSize: 15.0,
           );
-          Get.offAllNamed("/homepage");
+          Get.offAllNamed("/permission");
         },
       ).catchError(
         (e) {

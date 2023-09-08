@@ -1,33 +1,33 @@
 {
   "project_info": {
-    "project_number": "963095380393",
-    "project_id": "prepinter-fe440",
-    "storage_bucket": "prepinter-fe440.appspot.com"
+    "project_number": "884059385393",
+    "project_id": "interview-prep-53864",
+    "storage_bucket": "interview-prep-53864.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:963095380393:android:08c9d8e44564af9e9284b8",
+        "mobilesdk_app_id": "1:884059385393:android:754c5619013ec6151caf10",
         "android_client_info": {
           "package_name": "com.example.chatgpt"
         }
       },
       "oauth_client": [
         {
-          "client_id": "963095380393-kk6ll6ohoegsaefus0jbk4s1kljs1cjq.apps.googleusercontent.com",
+          "client_id": "884059385393-cs06rg5q9t4dm0p61l5b4b0h53ph1p32.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyBYWY_R_S_7gbDVrujbOJ48E5KpG5gsq7o"
+          "current_key": "AIzaSyCjfS4G4Ijv6KWNoyealRUGgIHzoA3IgsE"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "963095380393-kk6ll6ohoegsaefus0jbk4s1kljs1cjq.apps.googleusercontent.com",
+              "client_id": "884059385393-cs06rg5q9t4dm0p61l5b4b0h53ph1p32.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

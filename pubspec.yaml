@@ -64,7 +64,6 @@ dependencies:
   auto_size_text: ^3.0.0
   cloud_firestore: ^4.9.1
   appcheck: ^1.0.6
-  firebase_app_check: ^0.1.5+2
 dev_dependencies:
   flutter_test:
     sdk: flutter
